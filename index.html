@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rahvusvaheline Majandusteadus — Vaheeksami Spikker & Õppekeskkond</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --card-alt: #0f172a;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-bg: rgba(56, 189, 248, 0.14);
+      --success: #22c55e;
+      --danger: #ef4444;
+      --code-bg: #090d16;
+    }
+    body.light {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --card-alt: #f1f5f9;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0284c7;
+      --accent-bg: rgba(2, 132, 199, 0.1);
+      --success: #16a34a;
+      --danger: #dc2626;
+      --code-bg: #f1f5f9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 20px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .header {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent-bg);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    h1 { font-size: 24px; font-weight: 800; }
+    .subtitle { color: var(--muted); font-size: 14px; margin-top: 4px; }
+    .btn-group { display: flex; flex-wrap: wrap; gap: 8px; }
+    button {
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--card-alt);
+      color: var(--text);
+      padding: 9px 15px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.15s;
+    }
+    button:hover { border-color: var(--accent); }
+    button.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .toolbar {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    .search-box {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card-alt);
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    .search-box:focus { outline: 2px solid var(--accent); }
+    .tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tab-btn { padding: 6px 12px; font-size: 12px; border-radius: 8px; }
+    .section-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+    .section-title { font-size: 19px; font-weight: 700; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .box {
+      background: var(--card-alt);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .box h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--accent); }
+    .box ul { list-style: none; }
+    .box li { font-size: 13.5px; color: var(--muted); margin-bottom: 8px; }
+    .box li strong { color: var(--text); }
+    .formula-box {
+      background: var(--code-bg);
+      border-left: 3px solid var(--accent);
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-family: "JetBrains Mono", Consolas, monospace;
+      font-size: 13px;
+      color: var(--text);
+      margin: 8px 0 12px 0;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    th, td { padding: 11px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { color: var(--accent); font-weight: 700; background: var(--card-alt); }
+    code {
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-family: Consolas, monospace;
+      font-size: 12.5px;
+      color: var(--accent);
+    }
+    .hidden { display: none !important; }
+    .flashcard {
+      background: var(--card-alt);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 32px;
+      text-align: center;
+      cursor: pointer;
+      margin: 16px 0;
+      user-select: none;
+    }
+    .flashcard:hover { border-color: var(--accent); }
+    .fc-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 12px; font-weight: 700; }
+    .fc-content { font-size: 18px; font-weight: 600; max-width: 720px; }
+    .quiz-opt {
+      display: block;
+      width: 100%;
+      text-align: left;
+      margin-top: 8px;
+      padding: 10px 14px;
+    }
+    .quiz-feedback {
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--accent-bg);
+      font-size: 13px;
+    }
+    @media print {
+      .toolbar, .btn-group { display: none !important; }
+      body { background: #fff; color: #000; padding: 0; }
+      .section-card, .box { border: 1px solid #ccc; page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <span class="badge">📚 RAHVUSVAHELINE MAJANDUSTEADUS</span>
+        <h1>Vaheeksami Interaktiivne Spikker & Õppekeskkond</h1>
+        <p class="subtitle">Lihtsad selgitused, põhivalemid, 3 empiirilist artiklit, harjutusülesanded, mälukaardid ja test.</p>
+      </div>
+      <div class="btn-group">
+        <button id="mode-read" class="active" onclick="setMode('read')">📖 Konspekt</button>
+        <button id="mode-fc" onclick="setMode('fc')">🗂️ Mälukaardid (16)</button>
+        <button id="mode-quiz" onclick="setMode('quiz')">✅ Enesekontroll</button>
+        <button onclick="toggleTheme()" id="theme-btn">☀️ Hele vaade</button>
+        <button onclick="window.print()">🖨️ Prindi / PDF</button>
+      </div>
+    </div>
+
+    <!-- READ VIEW -->
+    <div id="view-read">
+      <div class="toolbar">
+        <input type="text" id="search" class="search-box" oninput="doSearch()" placeholder="🔍 Kiire otsing (nt Euler, Metzler, Balassa, CIP, UIP, Bussière, Demyanyk, Gräbner, Nickell, MRT...)">
+        <div class="tabs">
+          <button class="tab-btn active" data-cat="all" onclick="filterCat('all')">Kõik teemad</button>
+          <button class="tab-btn" data-cat="cheat" onclick="filterCat('cheat')">⚡ 2-min Spikker</button>
+          <button class="tab-btn" data-cat="trade" onclick="filterCat('trade')">1. Kaubandusteooria</button>
+          <button class="tab-btn" data-cat="or1" onclick="filterCat('or1')">2. O&R Ptk 1 (Jooksevkonto)</button>
+          <button class="tab-btn" data-cat="or4" onclick="filterCat('or4')">3. O&R Ptk 4 (Balassa-Samuelson)</button>
+          <button class="tab-btn" data-cat="or5" onclick="filterCat('or5')">4. O&R Ptk 5 (Riskijagamine)</button>
+          <button class="tab-btn" data-cat="levi" onclick="filterCat('levi')">5. Levi Ptk 7 & 8 (PPP & CIP/UIP)</button>
+          <button class="tab-btn" data-cat="emp" onclick="filterCat('emp')">6. Empiirilised artiklid (3 tk)</button>
+          <button class="tab-btn" data-cat="ex" onclick="filterCat('ex')">7. Ülesannete spikker (1–6)</button>
+        </div>
+      </div>
+
+      <!-- 1. CHEAT SHEET -->
+      <div class="section-card topic-block" data-cat="cheat">
+        <div class="section-header">
+          <div class="section-title">⚡ 1. Eksamispikker 2 minutiga (Kõige tähtsamad seosed)</div>
+          <span class="badge">Kiirülevaade</span>
+        </div>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Teema / Mudel</th>
+                <th>Põhivalem / Reegel</th>
+                <th>Majanduslik sisu ühe lausega</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Suhteline eelis (Ricardo)</strong></td>
+                <td><code>MRT = |ΔGood 2 / ΔGood 1|</code></td>
+                <td>Spetsialiseeru kaubale, mille alternatiivkulu (MRT) on madalaim — isegi kui teine riik on kõiges parem.</td>
+              </tr>
+              <tr>
+                <td><strong>Heckscher-Ohlin</strong></td>
+                <td><code>Rikkalik tegur → Eksport</code></td>
+                <td>Riik ekspordib kaupa, mille tootmine kasutab intensiivselt riigis külluslikku (odavat) tootmistegurit.</td>
+              </tr>
+              <tr>
+                <td><strong>Jooksevkonto (CA)</strong></td>
+                <td><code>CA = S - I = B(t+1) - B(t)</code></td>
+                <td>Kui säästad rohkem kui investeerid (S &gt; I), laenad ülejäägi välismaale ja välisvarad kasvavad.</td>
+              </tr>
+              <tr>
+                <td><strong>Euleri võrrand</strong></td>
+                <td><code>u'(C₁) = β(1+r)u'(C₂)</code></td>
+                <td>Tarbimise silumine: tänase ja homse tarbimise piirkasulikkuse suhe võrdub intressimääraga.</td>
+              </tr>
+              <tr>
+                <td><strong>Metzleri diagramm</strong></td>
+                <td><code>A₁↑ ⇒ CA₁↑ | A₂↑ ⇒ CA₁↓</code></td>
+                <td>Ajutine tulu kasv täna → säästad → CA paraneb. Oodatav buum tulevikus → investeerid ja laenad täna → CA puudujääk.</td>
+              </tr>
+              <tr>
+                <td><strong>Balassa-Samuelson</strong></td>
+                <td><code>A_T↑ ⇒ W↑ ⇒ P_N↑ ⇒ P↑</code></td>
+                <td>Eksportsektori tootlikkuse kasv tõstab palku igal pool → teenuste (juuksur) hind tõuseb → hinnatase kallineb.</td>
+              </tr>
+              <tr>
+                <td><strong>O&R Ptk 5 (Risk)</strong></td>
+                <td><code>C₂(1) = C₂(2)</code> (Täiskindlustus)</td>
+                <td>Aktuaarselt õiglase hinna korral maandatakse riigiriskid täielikult; tarbimine sõltub vaid maailma toodangust.</td>
+              </tr>
+              <tr>
+                <td><strong>Levi: Suhteline PPP</strong></td>
+                <td><code>ΔS / S ≈ π - π*</code></td>
+                <td>Kõrgema inflatsiooniga riigi valuuta odavneb täpselt inflatsioonide vahe võrra.</td>
+              </tr>
+              <tr>
+                <td><strong>Levi: CIP & UIP</strong></td>
+                <td><code>r - r* ≈ (F - S)/S | (Sᵉ - S)/S</code></td>
+                <td>CIP maandab valuutariski forvardiga (kehtib alati). UIP põhineb ootustel ja eeldab riskineutraalsust.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 2. TRADE THEORY -->
+      <div class="section-card topic-block" data-cat="trade">
+        <div class="section-header">
+          <div class="section-title">🌍 2. Kaubandusteooria põhitõed (Rivera-Batiz et al. 2020)</div>
+          <span class="badge">Teooria</span>
+        </div>
+        <div class="grid-2">
+          <div class="box">
+            <h3>2.1. Klassikaline teooria: Smith vs Ricardo</h3>
+            <ul>
+              <li>• <strong>Merkantilism ("Trumpism"):</strong> Eksport on hea, import halb (eesmärk koguda kulda). Tänapäeva mõistes on see intertemporaalne kaubandus (CA ≠ 0), mitte ühe perioodi heaolu.</li>
+              <li>• <strong>Adam Smith (Absoluutne eelis):</strong> Kaubandus suurendab heaolu ühe perioodi sees (kus CA = 0). Inglismaa on efektiivsem riides, Portugal veinis.</li>
+              <li>• <strong>MRT (Alternatiivkulu):</strong> <code>MRT = ΔVein / ΔRiie</code> — mitmest veinist peab loobuma 1 lisariide tootmiseks.</li>
+              <li>• <strong>David Ricardo (Suhteline eelis):</strong> Isegi kui üks riik on <strong>kõigis toodetes absoluutselt parem</strong>, tekib kaubandusest võit seni, kuni <code>MRT_EN ≠ MRT_PT</code>. Riik ekspordib toodet, milles tal on <strong>madalaim alternatiivkulu (MRT)</strong>.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>2.2. Heckscher-Ohlin (H-O) ja 4 suurt teoreemi</h3>
+            <ul>
+              <li>• <strong>1) Heckscher-Ohlini teoreem:</strong> Riik ekspordib kaupa, mille tootmine kasutab intensiivselt riigis külluslikult leiduvat (ja odavat) tootmistegurit (nt tööjõud L vs kapital K).</li>
+              <li>• <strong>2) Stolper-Samuelsoni teoreem:</strong> Kauba suhtelise hinna tõus tõstab selle kauba tootmisel intensiivselt kasutatava teguri reaalset tasu ja langetab teise teguri tasu.</li>
+              <li>• <strong>3) Tegurihindade ühtlustumine (FPE):</strong> Vabakaubandus ühtlustab palgad ja kapitali tulumäärad riikide vahel.</li>
+              <li>• <strong>4) Rybczynski teoreem:</strong> Kui ühe tootmisteguri varu riigis kasvab, suureneb seda tegurit intensiivselt kasutava kauba tootmine ja teise kauba tootmine väheneb.</li>
+              <li>• <strong>Leontieffi paradoks:</strong> Kapitalirikas USA (1947) eksportis töömahukaid kaupu! <em>Lahendus:</em> USA-s oli kõrge inimkapital (haritud oskustööjõud).</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>2.3. Uus kaubandusteooria (Krugman)</h3>
+            <ul>
+              <li>• <strong>Tarbijad:</strong> Armastavad tootesortimenti / mitmekesisust (variety: VW, Peugeot, Fiat).</li>
+              <li>• <strong>Tootjad:</strong> Kasvav mastaabisääst (suured püsikulud FC + püsiv piirkulu MC) → monopolistlik konkurents (p &gt; MC).</li>
+              <li>• <strong>Tulemus:</strong> Pole mõtet igas riigis kõiki mudeleid toota (FC tuleks maksta topelt). Tekib <strong>sisesharuline kaubandus (intra-industry trade)</strong> — riigid ekspordivad ja impordivad sama tööstusharu erinevaid brände.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>2.4. "Uus uus" teooria (Melitz), GVC ja Stiglitz</h3>
+            <ul>
+              <li>• <strong>Ettevõtete heterogeensus:</strong> Firmad on erineva tootlikkusega. Kaubanduse avanemisel toimub <strong>loov hävitamine</strong>: madala tootlikkusega firmad lahkuvad turult, kõrge tootlikkusega firmad kasvavad ja ekspordivad → kogu majanduse tootlikkus tõuseb!</li>
+              <li>• <strong>Globaalsed väärtusahelad (GVC):</strong> ~70% maailmakaubandusest on vahesisendid ja teenused.</li>
+              <li>• <strong>Dünaamiline suhteline eelis (Stiglitz):</strong> Pikaajalist suhtelist eelist saab kujundada tööstuspoliitikaga, suunates ressursse suure kasvupotentsiaaliga harudesse.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. O&R CH 1 -->
+      <div class="section-card topic-block" data-cat="or1">
+        <div class="section-header">
+          <div class="section-title">⏳ 3. Intertemporaalne kaubandus ja jooksevkonto (O&R 1. ptk)</div>
+          <span class="badge">Makromudel</span>
+        </div>
+        <div class="grid-3">
+          <div class="box">
+            <h3>3.1. Jooksevkonto (CA) ja SKP vs RKP</h3>
+            <div class="formula-box">
+              GNP = GDP + r·Bₜ<br>
+              CAₜ = Bₜ₊₁ - Bₜ<br>
+              CAₜ = Sₜ - Iₜ = Yₜ + r·Bₜ - Cₜ - Gₜ - Iₜ
+            </div>
+            <ul>
+              <li>• <strong>Definitsioon I:</strong> Netovälisvarade muutus (Bₜ₊₁ - Bₜ).</li>
+              <li>• <strong>Definitsioon II:</strong> Rahvuslik säästmine miinus investeeringud (S - I).</li>
+              <li>• Kui <strong>CA &gt; 0</strong>: riik laenab välismaale. Kui <strong>CA &lt; 0</strong>: riik laenab välismaalt sisse.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>3.2. Tarbija probleem ja Euleri võrrand</h3>
+            <div class="formula-box">
+              C₁ + C₂/(1+r) = Y₁ + Y₂/(1+r)<br>
+              u'(C₁) = β(1+r)u'(C₂)
+            </div>
+            <ul>
+              <li>• <strong>Euleri intuitsioon:</strong> Tänase 1 ühiku tarbimisest loobumise kaotus u'(C₁) peab võrduma homse (1+r) ühiku diskonteeritud kasuga β(1+r)u'(C₂).</li>
+              <li>• Kui <strong>β(1+r) = 1</strong>, siis <strong>C₁ = C₂</strong> (täielik tarbimise silumine).</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>3.3. Autarkia rᴬ & Investeeringute eraldatus</h3>
+            <div class="formula-box">
+              1 + rᴬ = u'(Y₁) / [β·u'(Y₂)]<br>
+              Investeeringud: F'(K₂) = r
+            </div>
+            <ul>
+              <li>• Kui <strong>r &lt; rᴬ</strong> (maailmas laenamine odav): riik laenab ja tarbib täna rohkem (CA₁ &lt; 0).</li>
+              <li>• <strong>Eraldumise printsiip:</strong> Väikeses avatud majanduses otsustatakse investeeringud F'(K₂) = r täiesti lahus tarbimiseelistustest!</li>
+            </ul>
+          </div>
+        </div>
+        <div class="box" style="margin-top:16px;">
+          <h3>3.4. Intressimäära tõusu (r ↑) 3 efekti ja Metzleri diagramm (1.3.2–1.3.3)</h3>
+          <div class="grid-2">
+            <div>
+              <p style="font-size:13.5px; margin-bottom:6px;"><strong>Kuidas intressimäära tõus (r ↑) mõjutab 1. perioodi säästmist (S₁)?</strong></p>
+              <ul>
+                <li>1. <strong>Asendusefekt (+):</strong> Tänane tarbimine muutub kallimaks → C₁ ↓ ja S₁ ↑.</li>
+                <li>2. <strong>Sissetulekuefekt (- laenuandjale):</strong> Kui riik on netolaenuandja (S₁ &gt; 0), teeb kõrgem intress rikkamaks → C₁ ↑ ja S₁ ↓.</li>
+                <li>3. <strong>Rikkusefekt (+):</strong> Tulevase tulu Y₂/(1+r) nüüdisväärtus langeb → C₁ ↓ ja S₁ ↑.</li>
+                <li>• <em>CEIS kasulikkuse korral:</em> kui intertemporaalse asenduse elastsus <strong>σ &gt; 1</strong>, domineerib asendusefekt.</li>
+              </ul>
+            </div>
+            <div>
+              <p style="font-size:13.5px; margin-bottom:6px;"><strong>Metzleri diagrammi šokid (Tasakaal: S - I = I* - S*):</strong></p>
+              <ul>
+                <li>• <strong>Ajutine tootlikkuse tõus 1. perioodil (A₁ ↑):</strong> Inimesed siluvad tarbimist ja säästavad suure osa lisatulust → <strong>CA₁ paraneb (ülejääk ↑)</strong> ning maailma intressimäär langeb (r ↓).</li>
+                <li>• <strong>Oodatav tootlikkuse tõus 2. perioodil (A₂ ↑):</strong> Tulevikus oodatakse rikkust → täna säästetakse vähem (S₁ ↓) ja investeeritakse rohkem (I₁ ↑) → <strong>CA₁ läheb puudujääki (↓)</strong> ja maailma intress tõuseb (r ↑).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. O&R CH 4 -->
+      <div class="section-card topic-block" data-cat="or4">
+        <div class="section-header">
+          <div class="section-title">💇 4. Balassa-Samuelsoni efekt ja reaalne vahetuskurss (O&R 4. ptk: 4.1–4.2.3)</div>
+          <span class="badge">Hinnatase</span>
+        </div>
+        <div class="grid-2">
+          <div class="box">
+            <h3>Miks on teenused vaestes riikides odavamad ja miks hinnatase konvergeerub?</h3>
+            <ul>
+              <li>• Majanduses on 2 sektorit: <strong>kaubeldavad kaubad (T)</strong> (nt tööstus, kus hinda dikteerib maailmaturg) ja <strong>mittekaubeldavad teenused (N)</strong> (nt juuksur, kinnisvara, restoranid).</li>
+              <li>• Tööjõud saab riigisiseselt vabalt T ja N sektori vahel liikuda → <strong>palgatase W on mõlemas sektoris võrdne</strong>.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Balassa-Samuelsoni ahelreaktsioon</h3>
+            <div class="formula-box">
+              A_T ↑  ⇒  W ↑ (kogu riigis)  ⇒  P_N ↑  ⇒  P ↑ (Reaalne kallinemine)
+            </div>
+            <ul>
+              <li>1. Arenevas riigis kasvab tootlikkus kiiresti eksportivas sektoris (<code>A_T ↑</code>).</li>
+              <li>2. Eksportsektor tõstab palku (<code>W ↑</code>).</li>
+              <li>3. Et töötajaid hoida, peab ka teenindussektor (N) tõstma palku (<code>W ↑</code>), kuigi juuksuri tootlikkus (<code>A_N</code>) pole kasvanud.</li>
+              <li>4. Kõrgema palga maksmiseks tõusevad teenuste hinnad (<code>P_N ↑</code>) → riigi üldine hinnatase tõuseb!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. O&R CH 5 -->
+      <div class="section-card topic-block" data-cat="or5">
+        <div class="section-header">
+          <div class="section-title">🛡️ 5. Määramatus ja riskijagamine finantsturgudel (O&R 5. ptk)</div>
+          <span class="badge">Finantsturud</span>
+        </div>
+        <div class="grid-2">
+          <div class="box">
+            <h3>5.1. Arrow-Debreu (AD) väärtpaberid ja Täiskindlustus</h3>
+            <div class="formula-box">
+              Arbitraaž: ∑ p(s) = 1 / (1 + r)<br>
+              Aktuaarselt õiglane hind: p(1) / p(2) = π(1) / π(2)<br>
+              Täiskindlustus: C₂(1) = C₂(2) = ... = C₂(S)
+            </div>
+            <ul>
+              <li>• <strong>AD-väärtpaber:</strong> Maksab 1 ühiku perioodil 2 ainult juhul, kui realiseerub seisund <em>s</em> (nt halb saak).</li>
+              <li>• <strong>Täielikud turud (Complete markets):</strong> AD-väärtpabereid saab osta iga võimaliku tulevikuseisundi vastu.</li>
+              <li>• Kui AD-hinnad on <strong>aktuaarselt õiglased</strong> (vastavad täpselt sündmuste tõenäosustele π), valib riskikartlik inimene <strong>täieliku kindlustuse</strong> — tarbimine on igas seisundis identne!</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>5.2. Tarbimise lahtisidumine & Home Bias Puzzle</h3>
+            <div class="formula-box">
+              C(s) = μ · Yʷ(s)   (fikseeritud osakaal maailma toodangust)
+            </div>
+            <ul>
+              <li>• <strong>Globaalne tasakaal:</strong> Riigispetsiifilised (idiosünkraatilised) riskid kaubeldakse täielikult minema. Alles jääb vaid maailma kogurisk.</li>
+              <li>• <strong>Lahtisidumine (Decoupling):</strong> Riigi tarbimine sõltub ainult maailma toodangust, mitte riigi enda SKP šokkidest!</li>
+              <li>• <strong>Empiiriline paradoks & Home Equity Bias Puzzle (lk 304–306):</strong> Praktikas korreleerub tarbimine riikide vahel oodatust vähem ja investorid hoiavad lõviosa portfellist kodumaistes aktsiates (tehingukulud, infoprobleemid, juriidilised barjäärid).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. LEVI CH 7 & 8 -->
+      <div class="section-card topic-block" data-cat="levi">
+        <div class="section-header">
+          <div class="section-title">💱 6. Hinnatasemed (PPP) ja Intressipariteedid (Levi 7. ja 8. ptk)</div>
+          <span class="badge">Valuutaturud</span>
+        </div>
+        <div class="grid-2">
+          <div class="box">
+            <h3>6.1. Ostujõu pariteet (PPP — Levi 7. ptk)</h3>
+            <div class="formula-box">
+              1. LOOP (1 kaup): Pᵢ = S · Pᵢ*<br>
+              2. Absoluutne PPP: P = S · P*<br>
+              3. Suhteline PPP: ΔS / S ≈ π - π*<br>
+              4. Ootustel põhinev PPP: ΔSᵉ / S ≈ πᵉ - π*ᵉ
+            </div>
+            <ul>
+              <li>• <strong>Miks absoluutne PPP ei kehti?</strong> Transpordikulud, tollid, erinevad tarbimiskorvid (Saksamaal õlu, Prantsusmaal vein), mittekaubeldavad teenused (Balassa-Samuelson).</li>
+              <li>• <strong>Eurostati tabel (EL hinnatasemed):</strong> Absoluutne PPP ei kehti. Suhteline PPP kehtib riikides, kus hinnavahe püsib konstantne (nt Taani), aga <strong>ei kehti</strong> konvergeeruvates riikides (Eesti, Tšehhi), kus hinnatase kasvab kiiremini.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>6.2. Intressipariteedid (CIP ja UIP — Levi 8. ptk)</h3>
+            <div class="formula-box">
+              CIP (Kaetud): r_$ - r_£ ≈ (F - S) / S = f<br>
+              UIP (Katmata): r_$ - r_£ ≈ (Sᵉ - S) / S<br>
+              Fisher-Open: r - πᵉ ≈ r* - π*ᵉ
+            </div>
+            <ul>
+              <li>• <strong>CIP:</strong> Valuutarisk on maandatud forvardlepinguga (F). Kui CIP ei kehti, tekib riskivaba arbitraaž, mis toob turu kohe paika.</li>
+              <li>• <strong>Miks CIP-st tekivad väikesed kõrvalekalded?</strong> 1) Tehingukulud (tegevusetuse tsoon), 2) Poliitiline risk, 3) Maksud (kapitalikasumi vs intressitulu maksumäär), 4) Likviidsuserinevused.</li>
+              <li>• <strong>UIP:</strong> Forvardlepingut ei tehta; tuginetakse oodatavale kursile Sᵉ. <strong>Eeldab riskineutraalsust!</strong> Riskikartlikkuse korral lisandub riskipreemia.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. EMPIRICAL PAPERS -->
+      <div class="section-card topic-block" data-cat="emp">
+        <div class="section-header">
+          <div class="section-title">📊 7. Kolm empiirilist teadusartiklit (Uurimisküsimus, Meetod, Tulemused)</div>
+          <span class="badge">Empiirika</span>
+        </div>
+        <div class="grid-3">
+          <div class="box">
+            <h3>1. Gräbner et al. (2021)</h3>
+            <p style="font-size:12px; color:var(--muted); margin-bottom:8px;"><em>Understanding Economic Openness</em></p>
+            <ul>
+              <li>• <strong>Mõõdikud:</strong> <em>De jure</em> (seadused, tariifid) vs <em>De facto</em> (kaubanduse/finantside maht); Reaalne vs Finants; Hübriid (KOF).</li>
+              <li>• <strong>Bruto vs Lisandväärtus:</strong> Auto importimine ja triibu peale värvimine näitab suurt brutokaubandust, kuid väikest lisandväärtust!</li>
+              <li>• <strong>Tulemus 1:</strong> Erinevad avatuse mõõdikud korreleeruvad omavahel väga nõrgalt (eriti muutustes Δ).</li>
+              <li>• <strong>Tulemus 2:</strong> Seos majanduskasvuga on <strong>äärmiselt tundlik ja habras</strong> (ebaloogilised märgid, vähe olulisi tulemusi, pöördkusaalsus).</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>2. Bussière et al. (2006)</h3>
+            <p style="font-size:12px; color:var(--muted); margin-bottom:8px;"><em>Current Account Dynamics in OECD & New EU</em></p>
+            <ul>
+              <li>• <strong>Andmed & Meetod:</strong> 33 riiki (1980–2002). Dünaamiline paneel (sisaldab <code>CAₜ₋₁</code>). Kuna LSDV annab <em>Nickelli nihke</em>, kasutatakse <strong>Anderson-Hsiao IV ja Arellano-Bond GMM</strong> meetodeid.</li>
+              <li>• <strong>Muutujad:</strong> <code>CA/GDP</code> sõltub <code>CAₜ₋₁</code>, eelarve ülejäägist, <code>Δnet_surplus</code> (ajutine vaba tulu), suhtelisest tulust ja investeeringutest.</li>
+              <li>• <strong>Tulemused:</strong> Ei saa ümber lükata O&R intertemporaalset teooriat (<code>Δnet_surplus</code> parandab CA-d), CA-l on tugev inerts (habit persistence) ja valitsuse eelarve mõjutab CA-d.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>3. Demyanyk et al. (2008)</h3>
+            <p style="font-size:12px; color:var(--muted); margin-bottom:8px;"><em>Risk Sharing and Portfolio Allocation in EMU</em></p>
+            <ul>
+              <li>• <strong>Teooria:</strong> O&R 5. ptk — finantsintegratsioon peaks lahti siduma riigi SKP ja tarbimise.</li>
+              <li>• <strong>Meetod:</strong> Ristandmete ja paneelregressioonid (1995–1999 vs 2000–2006). Mõõdetakse sissetuleku silumist (GDP vs GNI) ja tarbimise silumist (GDP vs C). Täielik silumine: <code>β = 1 (100%)</code>.</li>
+              <li>• <strong>Tulemus 1:</strong> Riskijagamine EL-is ja euroalal on üldiselt madal; tarbimist silutakse rohkem kui sissetulekut.</li>
+              <li>• <strong>PÕHILEID:</strong> <strong>Euro tulek EI suurendanud riskijagamist!</strong> Põhjused on ebaselged.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. EXERCISES -->
+      <div class="section-card topic-block" data-cat="ex">
+        <div class="section-header">
+          <div class="section-title">🧮 8. Harjutusülesannete lahenduskäigud (Exercise sets 1–6)</div>
+          <span class="badge">Praktika</span>
+        </div>
+        <div class="grid-3">
+          <div class="box">
+            <h3>Harjutused 1 & 2: MRT ja Suhteline eelis</h3>
+            <div class="formula-box">
+              MRT = |ΔGood 2 / ΔGood 1|
+            </div>
+            <ul>
+              <li>• Kui Inglismaa loobub 1 riide jaoks 0.5 veinist (<code>MRT_EN = 0.5</code>) ja Portugal 2 veinist (<code>MRT_PT = 2</code>):</li>
+              <li>• Inglismaa ekspordib riiet (madalam alternatiivkulu 0.5 &lt; 2), Portugal ekspordib veini.</li>
+              <li>• Vabakaubanduse tasakaaluhind jääb vahemikku <code>0.5 ≤ P_riie/P_vein ≤ 2</code>.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Harjutused 3 & 4: O&R Euleri võrrand ja CA₁</h3>
+            <div class="formula-box">
+              U = ln(C₁) + β·ln(C₂)<br>
+              ⇒ C₂ = β(1+r)C₁<br>
+              ⇒ C₁ = [1/(1+β)] · [Y₁ + Y₂/(1+r)]<br>
+              ⇒ CA₁ = Y₁ - C₁
+            </div>
+            <ul>
+              <li>• Autarkia intressimäär leitakse pannes C₁=Y₁ ja C₂=Y₂: <code>1 + rᴬ = Y₂ / (β·Y₁)</code>.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Harjutused 5 & 6: Levi CIP ja Arbitraaž</h3>
+            <div class="formula-box">
+              3-kuu CIP: r_$/4 ≈ r_£/4 + (F - S)/S
+            </div>
+            <ul>
+              <li>• Näide: <code>r_$ = 5%</code> (1.25% 3 kuuga), <code>r_£ = 7%</code> (1.75% 3 kuuga).</li>
+              <li>• Kui 3-kuu forvard-soodustus naelale on <code>-0.7%</code>, siis kaetud tootlus naelas on <code>1.75% - 0.7% = 1.05% &lt; 1.25%</code> → kasulikum on investeerida dollarisse!</li>
+              <li>• Pariteet kehtib, kui forvard-soodustus on <code>-0.5%</code>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLASHCARDS VIEW -->
+    <div id="view-fc" class="hidden">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-title" id="fc-progress">Kaart 1 / 16</div>
+          <span class="badge" id="fc-cat">Teooria</span>
+        </div>
+        <div class="flashcard" onclick="flipFC()">
+          <div class="fc-label" id="fc-side">KÜSIMUS (Klõpsa kaardil vastuse vaatamiseks)</div>
+          <div class="fc-content" id="fc-body"></div>
+        </div>
+        <div class="btn-group" style="justify-content:center;">
+          <button onclick="prevFC()">← Eelmine</button>
+          <button class="active" onclick="flipFC()">🔄 Pööra kaarti</button>
+          <button onclick="nextFC()">Järgmine →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUIZ VIEW -->
+    <div id="view-quiz" class="hidden">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-title">✅ Enesekontrolli kiirtest</div>
+          <button onclick="initQuiz()">🔄 Lähtesta test</button>
+        </div>
+        <div id="quiz-list" style="display:flex; flex-direction:column; gap:16px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const cards = [
+      { c: "Rivera-Batiz", q: "Mis vahe on absoluutsel ja suhtelisel eelisel (Comparative Advantage)?", a: "Absoluutne eelis: riik on absoluutselt tootlikum. Suhteline eelis (Ricardo): riik spetsialiseerub kaubale, mille alternatiivkulu (MRT) on madalaim — isegi kui teine riik on kõiges parem." },
+      { c: "Heckscher-Ohlin", q: "Nimeta Heckscher-Ohlini mudeli 4 põhiteoreemi.", a: "1) H-O (ekspordi küllusliku teguri kaupa), 2) Stolper-Samuelson (hinna tõus tõstab intensiivse teguri tulu), 3) Tegurihindade ühtlustumine (FPE), 4) Rybczynski (teguri kasv suurendab seda kasutava haru toodangut)." },
+      { c: "Kaubandus", q: "Mida seletavad Krugmani 'uus' ja Melitzi 'uus uus' kaubandusteooria?", a: "Krugman: mastaabisääst (FC) + sortimendiarmastus toovad sisesharulise kaubanduse. Melitz: firmade heterogeensus — kaubanduse avanemisel madala tootlikkusega firmad lahkuvad ja keskmine tootlikkus kasvab." },
+      { c: "O&R Ptk 1", q: "Kuidas on jooksevkonto (CA) defineeritud kahel samaväärsel viisil?", a: "1) Välisvarade muutus: CA_t = B_{t+1} - B_t.  2) Säästud miinus investeeringud: CA_t = S_t - I_t = Y_t + rB_t - C_t - G_t - I_t." },
+      { c: "O&R Ptk 1", q: "Mis on Euleri võrrand ja selle majanduslik intuitsioon?", a: "u'(C₁) = β(1+r)u'(C₂). Tasakaalus ei saa tarbija heaolu tõsta tarbimist perioodide vahel ümber tõstes: tänane piirkasulikkus võrdub homse diskonteeritud piirkasulikkusega koos intressiga." },
+      { c: "O&R Ptk 1", q: "Mida tähendab investeeringute ja tarbimise eraldatuse printsiip?", a: "Väikeses avatud majanduses määrab investeeringud ainult F'(K₂) = r (maailma intress), täiesti sõltumata kodumaistest tarbimiseelistustest." },
+      { c: "O&R Ptk 1", q: "Mis juhtub jooksevkontoga (CA₁), kui 1) 1. perioodi tootlikkus tõuseb vs 2) 2. perioodi oodatav tootlikkus tõuseb?", a: "1) Perioodi 1 ajutine tõus: lisatulust säästetakse tulevikuks → CA₁ paraneb (ülejääk). 2) Perioodi 2 oodatav tõus: laenatakse/tarbitakse juba täna ja investeeritakse → CA₁ halveneb (puudujääk)." },
+      { c: "O&R Ptk 4", q: "Kuidas töötab Balassa-Samuelsoni efekt?", a: "Tootlikkuse kasv kaubeldavas sektoris (A_T ↑) tõstab palku (W ↑) kogu majanduses. Kuna teenustes (N) tootlikkus ei kasvanud, tõusevad teenuste hinnad (P_N ↑) ja riigi üldine hinnatase kallineb." },
+      { c: "O&R Ptk 5", q: "Mis on Arrow-Debreu väärtpaber ja millal valitakse täielik kindlustus?", a: "AD-väärtpaber maksab 1 ühiku ainult seisundis s. Täiskindlustus C₂(1) = C₂(2) valitakse siis, kui hinnad on aktuaarselt õiglased: p(1)/p(2) = π(1)/π(2)." },
+      { c: "O&R Ptk 5", q: "Mida tähendab tarbimise lahtisidumine (decoupling) O&R 5. peatükis?", a: "Täieliku finantsintegratsiooni korral sõltub riigi tarbimine ainult maailma kogutoodangust, mitte riigi enda SKP šokkidest." },
+      { c: "Levi Ptk 7", q: "Mis vahe on absoluutsel ja suhtelisel ostujõu pariteedil (PPP)?", a: "Absoluutne PPP: hinnatasemed samas valuutas on võrdsed (P = S·P*). Suhteline PPP: vahetuskursi muutus võrdub inflatsioonide vahega (ΔS/S ≈ π - π*)." },
+      { c: "Levi Ptk 8", q: "Mis vahe on kaetud (CIP) ja katmata (UIP) intressipariteedil?", a: "CIP: r - r* ≈ (F - S)/S — valuutarisk on maandatud forvardiga. UIP: r - r* ≈ (Sᵉ - S)/S — forvardit pole, põhineb oodataval kursil Sᵉ ja eeldab riskineutraalsust." },
+      { c: "Levi Ptk 8", q: "Nimeta 4 põhjust, miks CIP-st võivad tekkida kõrvalekalded.", a: "1) Tehingukulud (neutral band), 2) Poliitiline risk, 3) Erinevad maksumäärad intressitulule ja kapitalikasumile, 4) Likviidsuserinevused." },
+      { c: "Gräbner (2021)", q: "Mis on Gräbner et al. (2021) põhijäreldused avatuse mõõdikute kohta?", a: "1) Erinevad avatuse mõõdikud korreleeruvad omavahel nõrgalt (eriti muutustes Δ). 2) Seos majanduskasvuga on äärmiselt tundlik ja ebastabiilne." },
+      { c: "Bussière (2006)", q: "Mida uurisid Bussière et al. (2006), mis meetodit kasutasid ja mida leidsid?", a: "Uurisid 33 riigi jooksevkontot dünaamilise paneeliga (Arellano-Bond GMM ja Anderson-Hsiao IV Nickelli nihke vastu). Leidsid: CA-l on tugev püsivus, eelarve ülejääk ja ajutine netotulu kasv (Δnet_surplus) parandavad CA-d." },
+      { c: "Demyanyk (2008)", q: "Mida leidsid Demyanyk et al. (2008) euroala riskijagamise kohta?", a: "Riskijagamine EL-is ja euroalal on piiratud ning euro kasutuselevõtt EI suurendanud sissetuleku ega tarbimise riskijagamist!" }
+    ];
+
+    const quiz = [
+      {
+        q: "1. Kui maailmaturu intressimäär r on madalam kui riigi autarkia intressimäär rᴬ (r < rᴬ), siis avatud majanduses:",
+        o: ["Riik säästab 1. perioodil ja jooksevkonto on ülejäägis (CA₁ > 0)", "Riik laenab 1. perioodil sisse, tarbib rohkem kui toodab ja CA₁ < 0", "Riigi heaolu langeb võrreldes autarkiaga"],
+        a: 1,
+        e: "Kui r < rᴬ, on laenamine odav: riik toob tarbimist 1. perioodi (C₁ > Y₁) ja tekib jooksevkonto puudujääk (CA₁ < 0)."
+      },
+      {
+        q: "2. Metzleri diagrammi järgi toob oodatav tulevikubuum (2. perioodi tootlikkuse tõus A₂ ↑) 1. perioodil kaasa:",
+        o: ["Jooksevkonto puudujäägi (CA₁ ↓), sest täna säästetakse vähem ja investeeritakse rohkem", "Jooksevkonto ülejäägi (CA₁ ↑), sest inimesed hakkavad kohe rohkem säästma", "Maailma intressimäära languse (r ↓)"],
+        a: 0,
+        e: "Tulevikus oodatava rikkuse tõttu suurendatakse täna investeeringuid ja tarbimist, mistõttu CA₁ läheb defitsiiti."
+      },
+      {
+        q: "3. Milline väide Demyanyk et al. (2008) empiirilise artikli kohta on ÕIGE?",
+        o: ["Euro kasutuselevõtt kasvatas sissetuleku riskijagamise peaaegu 100%-ni", "Riskijagamine euroalal on piiratud ning euro tulek EI suurendanud sissetuleku ega tarbimise riskijagamist", "Sissetulekut (GNI) silutakse euroalal palju rohkem kui tarbimist (C)"],
+        a: 1,
+        e: "Demyanyk et al. (2008) peamine leid on, et riskijagamine on piiratud ja euro kasutuselevõtt ei toonud kaasa riskijagamise kasvu."
+      },
+      {
+        q: "4. Miks kasutasid Bussière et al. (2006) jooksevkonto paneelregressioonis Arellano-Bond GMM ja Anderson-Hsiao IV meetodeid?",
+        o: ["Sest mudelis on hilistatud sõltuv muutuja CA(t-1), mis tekitab tavalises LSDV paneelis Nickelli nihke", "Sest jooksevkonto andmed olid saadaval ainult ühe aasta kohta", "Sest valitsuse eelarve tasakaal ei mõjuta kunagi jooksevkontot"],
+        a: 0,
+        e: "Dünaamilises paneelis tekitab CA(t-1) koos fikseeritud efektidega Nickelli nihke ja endogeensuse."
+      },
+      {
+        q: "5. Balassa-Samuelsoni mudeli kohaselt põhjustab kiire tootlikkuse kasv eksportivas (kaubeldavas) sektoris:",
+        o: ["Palkade languse teenindussektoris ja hindade odavnemise", "Üldise palgatõusu mõlemas sektoris, mittekaubeldavate teenuste kallinemise (P_N ↑) ja reaalse vahetuskursi kallinemise", "Absoluutse PPP kohese kehtima hakkamise"],
+        a: 1,
+        e: "Kaubeldava sektori tootlikkuse kasv tõstab palku kogu majanduses; kuna teenustes tootlikkus ei kasva, tõusevad teenuste hinnad P_N."
+      },
+      {
+        q: "6. Millal valib riskikartlik tarbija O&R 5. peatüki mudelis täieliku kindlustuse (C₂(1) = C₂(2))?",
+        o: ["Ainult siis, kui ta on täielikult riskineutraalne", "Siis, kui Arrow-Debreu väärtpaberite hinnad on aktuaarselt õiglased: p(1)/p(2) = π(1)/π(2)", "Ainult autarkias"],
+        a: 1,
+        e: "Kui kindlustuse suhteline hind võrdub seisundite tõenäosuste suhtega, maandab riskikartlik tarbija kogu riski."
+      }
+    ];
+
+    let idx = 0, flipped = false;
+
+    function setMode(m) {
+      document.getElementById('view-read').classList.toggle('hidden', m !== 'read');
+      document.getElementById('view-fc').classList.toggle('hidden', m !== 'fc');
+      document.getElementById('view-quiz').classList.toggle('hidden', m !== 'quiz');
+      ['read', 'fc', 'quiz'].forEach(k => document.getElementById('mode-' + k).classList.toggle('active', k === m));
+      if (m === 'fc') showFC();
+      if (m === 'quiz') initQuiz();
+    }
+
+    function filterCat(c) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === c));
+      document.querySelectorAll('.topic-block').forEach(s => {
+        s.classList.toggle('hidden', c !== 'all' && s.dataset.cat !== c);
+      });
+    }
+
+    function doSearch() {
+      const q = document.getElementById('search').value.toLowerCase().trim();
+      document.querySelectorAll('.topic-block').forEach(s => {
+        s.classList.toggle('hidden', q && !s.innerText.toLowerCase().includes(q));
+      });
+    }
+
+    function showFC() {
+      const item = cards[idx];
+      document.getElementById('fc-progress').innerText = `Kaart ${idx + 1} / ${cards.length}`;
+      document.getElementById('fc-cat').innerText = item.c;
+      document.getElementById('fc-side').innerText = flipped ? "VASTUS (Klõpsa küsimuse vaatamiseks)" : "KÜSIMUS (Klõpsa vastuse vaatamiseks)";
+      document.getElementById('fc-body').innerText = flipped ? item.a : item.q;
+    }
+
+    function flipFC() { flipped = !flipped; showFC(); }
+    function nextFC() { idx = (idx + 1) % cards.length; flipped = false; showFC(); }
+    function prevFC() { idx = (idx - 1 + cards.length) % cards.length; flipped = false; showFC(); }
+
+    function initQuiz() {
+      const list = document.getElementById('quiz-list');
+      list.innerHTML = '';
+      quiz.forEach((q, qi) => {
+        const box = document.createElement('div');
+        box.className = 'box';
+        box.innerHTML = `
+          <div style="font-weight:700; margin-bottom:8px;">${q.q}</div>
+          ${q.o.map((opt, oi) => `<button class="quiz-opt" onclick="checkAns(${qi}, ${oi})">${opt}</button>`).join('')}
+          <div id="qf-${qi}" class="quiz-feedback hidden"></div>
+        `;
+        list.appendChild(box);
+      });
+    }
+
+    function checkAns(qi, oi) {
+      const q = quiz[qi];
+      const fb = document.getElementById('qf-' + qi);
+      fb.classList.remove('hidden');
+      fb.innerHTML = (oi === q.a)
+        ? `✅ <strong>Õige!</strong> ${q.e}`
+        : `❌ <strong>Vale.</strong> Õige vastus: <em>${q.o[q.a]}</em>.<br>${q.e}`;
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+      const isLight = document.body.classList.contains('light');
+      document.getElementById('theme-btn').innerText = isLight ? '🌙 Tume vaade' : '☀️ Hele vaade';
+    }
+  </script>
+</body>
+</html>

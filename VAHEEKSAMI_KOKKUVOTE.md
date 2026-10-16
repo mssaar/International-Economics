@@ -1,320 +1,327 @@
-# RAHVUSVAHELINE MAJANDUSTEADUS — VAHEEKSAMI KIIRKONSPEKT JA SPINNER
+# 📚 RAHVUSVAHELINE MAJANDUSTEADUS — VAHEEKSAMI KIIRKONSPEKT JA SPIKKER
 
-> **Eesmärk:** Väga lihtne, lühike ja eksamile orienteeritud konspekt. Siin on välja toodud täpselt need teemad, mida [VAHEEKSAM.doc](file:///c:/Users/sverk/Documents/International%20Economics/VAHEEKSAM.doc) nõuab. Valemite taga on alati lahti seletatud **majanduslik loogika**.
-
----
-
-## SISUKORD
-1. [Eksamispikker 2 minutiga (Põhivalemid ja intuitsioon)](#1-eksamispikker-2-minutiga)
-2. [Kaubandusteooria põhitõed (Rivera-Batiz et al. 2020)](#2-kaubandusteooria-rivera-batiz-et-al-2020)
-3. [Intertemporaalne kaubandus ja jooksevkonto (O&R 1. ptk)](#3-intertemporaalne-kaubandus-ja-jooksevkonto-or-ch-1)
-4. [Balassa-Samuelsoni efekt ja vahetuskurss (O&R 4. ptk: 4.1–4.2.3)](#4-balassa-samuelsoni-efekt-or-ch-4)
-5. [Määramatus ja riskijagamine finantsturgudel (O&R 5. ptk)](#5-määramatus-ja-riskijagamine-or-ch-5)
-6. [Hinnatasemed ja intressipariteedid (Levi 7. ja 8. ptk)](#6-hinnatasemed-ja-intressipariteedid-levi-ch-7--8)
-7. [Kolm empiirilist artiklit (Gräbner, Bussière, Demyanyk)](#7-kolm-empiirilist-teadustööd)
-8. [Harjutusülesannete spikker (Exercise sets 1–6)](#8-harjutusülesannete-tüüpülesanded-ja-nipid)
+> **Kuidas seda faili kõige mugavamalt lugeda?**
+> 1. 🌐 **Interaktiivne veebivaade (kaardid, otsing, mälukaardid, test):** ava **[index.html](index.html)** otse brauseris!
+> 2. 📄 **Trükivalmis PDF / Word:** ava **[VAHEEKSAMI_KOKKUVOTE.pdf](VAHEEKSAMI_KOKKUVOTE.pdf)** või **[VAHEEKSAMI_KOKKUVOTE.docx](VAHEEKSAMI_KOKKUVOTE.docx)**.
+> 3. 📖 **See Markdown-fail:** kõik valemid on kirjutatud puhaste sümbolitega (`→`, `Δ`, `β`, `π`, `₁`, `₂`), et tekst oleks kergesti loetav nii telefonis, GitHubis kui ka koodiredaktoris ilma LaTeXi mürata.
 
 ---
 
-## 1. Eksamispikker 2 minutiga
+## 🧭 KIIRE SISUKORD
+1. [⚡ Eksamispikker 2 minutiga (Kõik põhiseosed ühes tabelis)](#1--eksamispikker-2-minutiga)
+2. [🌍 Kaubandusteooria põhitõed (Rivera-Batiz et al. 2020)](#2--kaubandusteooria-rivera-batiz-et-al-2020)
+3. [⏳ Intertemporaalne kaubandus ja jooksevkonto (O&R 1. ptk)](#3--intertemporaalne-kaubandus-ja-jooksevkonto-or-1-ptk)
+4. [💇 Balassa-Samuelsoni efekt ja reaalne kurss (O&R 4. ptk: 4.1–4.2.3)](#4--balassa-samuelsoni-efekt-or-4-ptk-41423)
+5. [🛡️ Määramatus ja riskijagamine finantsturgudel (O&R 5. ptk)](#5--määramatus-ja-riskijagamine-or-5-ptk)
+6. [💱 Hinnatasemed (PPP) ja intressipariteedid (Levi 7. ja 8. ptk)](#6--hinnatasemed-ja-intressipariteedid-levi-7-ja-8-ptk)
+7. [📊 Kolm empiirilist teadusartiklit (Gräbner, Bussière, Demyanyk)](#7--kolm-empiirilist-teadustööd)
+8. [🧮 Harjutusülesannete lahendusspikker (Exercise sets 1–6)](#8--harjutusülesannete-tüüpülesanded-ja-nipid)
 
-| Teema | Põhiseos / Valem | Majanduslik sisu väga lihtsalt |
+---
+
+## 1. ⚡ Eksamispikker 2 minutiga
+
+| Teema / Mudel | Põhivalem / Reegel | Majanduslik sisu ühe lausega |
 | :--- | :--- | :--- |
-| **Suhteline eelis** | Madalaim $MRT$ (alternatiivkulu) | Spetsialiseeru sellele, mida toodad teistest suhteliselt odavamalt (isegi kui teine teeb kõike kiiremini). |
-| **Heckscher-Ohlin** | Rikkalik tootmistegur $\rightarrow$ eksport | Kui riigis on palju tööjõudu, tooda ja ekspordi töömahukaid kaupu. |
-| **Jooksevkonto (CA)** | $CA = S - I = \Delta NFA$ | Kui säästad rohkem kui investeerid, laenad ülejäägi välismaale ($CA > 0$). |
-| **Euleri võrrand** | $u'(C_1) = \beta(1+r) u'(C_2)$ | Tänase ja homse tarbimise piirkasulikkuse suhe peab võrduma intressimääraga (tarbimise silumine). |
-| **Metzleri diagramm** | Tänane šokk vs tuleviku šokk | Ajutine hea aeg täna $\rightarrow$ säästad $\rightarrow CA \uparrow$. Tulevikus oodatav buum $\rightarrow$ investeerid täna $\rightarrow CA \downarrow$ (puudujääk). |
-| **Balassa-Samuelson** | $A_T \uparrow \Rightarrow W \uparrow \Rightarrow P_N \uparrow$ | Tootlikkus tõuseb kaubeldavas sektoris $\rightarrow$ palgad tõusevad igal pool $\rightarrow$ juuksurite jm kohalike teenuste hinnad tõusevad $\rightarrow$ riigi hinnatase kallineb. |
-| **AD-väärtpaberid** | Täielik kindlustus | Kui kindlustus on aktuaarselt õiglane, on tarbimine kõigis tulevikuseisundites sama (täielik silumine). |
-| **Levi: CIP** | $r_{\$} - r_{£} \approx \frac{F - S}{S}$ | Intressierinevus kaetakse forvardturul ära (puudub risk, arbitraaž välistab kasumi). |
-| **Levi: UIP** | $r_{\$} - r_{£} \approx \frac{S^e - S}{S}$ | Intressierinevus võrdub kursi oodatava muutusega (riskineutraalsus). |
-| **Levi: Suhteline PPP** | $\frac{\Delta S}{S} \approx \pi - \pi^*$ | Valuuta odavneb täpselt inflatsioonide vahe võrra. |
+| **Suhteline eelis (Ricardo)** | `MRT = \|ΔGood 2 / ΔGood 1\|` | Spetsialiseeru kaubale, mille alternatiivkulu (`MRT`) on sinu riigis madalaim — isegi kui teine riik on kõiges parem. |
+| **Heckscher-Ohlin** | `Rikkalik tegur → Eksport` | Kui riigis on palju tööjõudu, tooda ja ekspordi töömahukaid kaupu; kui kapitali, siis kapitalimahukaid. |
+| **Jooksevkonto (CA)** | `CA = S - I = B(t+1) - B(t)` | Kui säästad rohkem kui investeerid (`S > I`), laenad ülejäägi välismaale (`CA > 0`) ja välisvarad kasvavad. |
+| **Euleri võrrand** | `u'(C₁) = β(1+r) · u'(C₂)` | Tarbimise silumine: tänase ja homse tarbimise piirkasulikkus peab olema tasakaalus. |
+| **Metzleri diagramm** | `A₁↑ ⇒ CA₁↑`  \|  `A₂↑ ⇒ CA₁↓` | Ajutine hea aeg täna → säästad → `CA` paraneb. Oodatav buum tulevikus → investeerid ja laenad täna → `CA` puudujääk. |
+| **Balassa-Samuelson** | `A_T↑ ⇒ W↑ ⇒ P_N↑ ⇒ P↑` | Eksportsektori tootlikkuse kasv tõstab palku igal pool → teenuste (juuksur) hind tõuseb → hinnatase kallineb. |
+| **AD-väärtpaberid (Risk)** | `C₂(1) = C₂(2)` (Täiskindlustus) | Aktuaarselt õiglase hinna korral maandatakse riigiriskid täielikult; tarbimine sõltub vaid maailma toodangust. |
+| **Levi: Suhteline PPP** | `ΔS / S ≈ π - π*` | Kõrgema inflatsiooniga riigi valuuta odavneb täpselt inflatsioonide vahe võrra. |
+| **Levi: CIP (Kaetud)** | `r_$ - r_£ ≈ (F - S) / S` | Intressierinevus kaetakse forvardlepinguga ära (puudub valuutarisk, arbitraaž välistab kasumi). |
+| **Levi: UIP (Katmata)** | `r_$ - r_£ ≈ (Sᵉ - S) / S` | Intressierinevus võrdub kursi oodatava muutusega (eeldab riskineutraalsust!). |
 
 ---
 
-## 2. Kaubandusteooria (Rivera-Batiz et al. 2020)
+## 2. 🌍 Kaubandusteooria (Rivera-Batiz et al. 2020)
 
-### 2.1. Klassikaline kaubandusteooria
-* **Merkantilism (Trumpism):** Eksport on hea, import on halb; kaubandusülejääk toob kulda. *Tänapäeva vaade:* see on tegelikult intertemporaalne küsimus (laenamine/säästmine üle aja), mitte ühe perioodi heaolu.
-* **Adam Smith (1776) – Absoluutne eelis:** Kaubandus suurendab heaolu ka ühe perioodi sees. Inglismaa toodab riiet, Portugal veini.
-* **Marginaalne asendusmäär tootmises ($MRT$ / Alternatiivkulu):**
-  $$MRT = \frac{\Delta \text{Good 2}}{\Delta \text{Good 1}}$$
-  Mitmest ühikust veinist pead loobuma, et saada 1 lisariie. Kaubandusest saab kasu seni, kuni riikide $MRT$-d erinevad.
+### 2.1. Klassikaline kaubandusteooria: Smith vs Ricardo
+* **Merkantilism ("Trumpism"):** Eksport on hea, import on halb; kaubandusülejääk toob riiki kulda.
+  * *Tänapäeva tõlgendus:* See on tegelikult **intertemporaalne kaubandus** (laenamine/säästmine üle aja, vt O&R 1. ptk), mitte ühe perioodi heaolu!
+* **Adam Smith (1776) – Absoluutne eelis:** Kaubandus suurendab heaolu ka ühe perioodi sees (kus kaubandusbilanss = 0). Inglismaa on efektiivsem riides, Portugal veinis → mõlemad võidavad.
+* **Marginaalne asendusmäär tootmises (`MRT` / Alternatiivkulu):**
+  ```text
+  MRT = |ΔGood 2 / ΔGood 1|
+  ```
+  Näitab, mitmest ühikust veinist pead loobuma, et toota 1 lisariie. Kaubandusest tekib kasu seni, kuni riikide `MRT`-d on erinevad (`MRT_EN ≠ MRT_PT`).
 * **David Ricardo – Suhteline eelis (Comparative Advantage):**
   * Isegi kui üks riik on **kõigi** toodete valmistamises absoluutselt produktiivsem, on kaubandus ikkagi kasulik mõlemale!
-  * **Reegel:** Riik peab tootma ja eksportima seda toodet, milles tal on **madalaim alternatiivkulu** ($MRT$) ehk suhteliselt suurim tootlikkus.
+  * **Kuldreegel:** Riik toodab ja ekspordib seda toodet, milles tal on **madalaim alternatiivkulu (`MRT`)** ehk suhteliselt suurim tootlikkus.
 
-### 2.2. Heckscher-Ohlini (H-O) teooria ja 4 teoreemi
-Eeldus: 2 riiki, 2 tootmistegurit (tööjõud $L$, kapital $K$), 2 toodet. Riikidel on erinev tegurite varustatus (nt Saksamaal palju kapitali, Keenias palju tööjõudu).
+---
 
-1. **Heckscher-Ohlini teoreem:** Riik ekspordib toodet, mille tootmine kasutab intensiivselt riigis rikkalikult leiduvat tootmistegurit. (Tööjõurikas riik ekspordib töömahukat toodet, sest tööjõud on seal odav).
-2. **Stolper-Samuelsoni teoreem:** Kui toote suhteline hind maailmaturul tõuseb, tõuseb selle toote tootmisel intensiivselt kasutatava tootmisteguri reaalne tasu (ja teise teguri tasu langeb). *Näide:* Kui riide hind tõuseb ja riie on töömahukas, tõusevad reaalpalgad ja kapitali rent langeb.
-3. **Tegurihindade ühtlustumise teoreem (Factor Price Equalization - FPE):** Vabakaubandus ühtlustab riikide vahel palku ja kapitali rendimäärasid, isegi kui töölised ja masinad riigist riiki ei liigu. (Kaubavahetus asendab tootmistegurite rännet).
-4. **Rybczynski teoreem:** Kui ühe tootmisteguri hulk riigis kasvab (konstantsete tootehindade juures), kasvab seda tegurit intensiivselt kasutava toote toodang ning *teise toote toodang väheneb*.
-* **Leontieffi paradoks:** Empiiriline test (USA 1947) näitas, et kapitalirikas USA eksportis töömahukaid ja importis kapitalimahukaid kaupu! *Selgitus:* USA töölised olid väga haritud (inimkapital ehk oskustööjõud, mitte lihtne füüsiline tööjõud); lisaks mõõtmisprobleemid.
+### 2.2. Heckscher-Ohlini (H-O) teooria ja 4 suurt teoreemi
+* **Eeldused:** 2 riiki, 2 tootmistegurit (tööjõud `L`, kapital `K`), 2 kaupa. Riikidel on erinev tegurite varustatus (nt Saksamaal palju kapitali `K`, Keenias palju tööjõudu `L`).
+
+| # | Teoreemi nimi | Mida see ütleb (väga lihtsalt)? |
+| :--- | :--- | :--- |
+| **1.** | **Heckscher-Ohlini teoreem** | Riik ekspordib toodet, mille valmistamine kasutab intensiivselt riigis **külluslikult leiduvat (odavat) tootmistegurit**. |
+| **2.** | **Stolper-Samuelsoni teoreem** | Kui kauba suhteline hind tõuseb, siis selle kauba tootmisel intensiivselt kasutatava **teguri reaalpalk/tulu tõuseb** (ja teise teguri tulu langeb). |
+| **3.** | **Tegurihindade ühtlustumine (FPE)** | Vabakaubandus **ühtlustab riikide vahel palgad ja kapitali rendi**, isegi kui töölised ja kapital riigist riiki ei liigu. |
+| **4.** | **Rybczynski teoreem** | Kui ühe tootmisteguri varu riigis kasvab (püsivate hindade juures), **suureneb seda tegurit intensiivselt kasutava kauba toodang** ja teise kauba toodang kahaneb. |
+
+* **Leontieffi paradoks (1947):** Empiiriline kontroll näitas, et kapitalirikas USA eksportis hoopis töömahukaid kaupu!
+  * *Miks?* USA töölised olid väga haritud (**inimkapital / oskustööjõud**, mitte lihtne tööjõud) + mõõtmisprobleemid.
+
+---
 
 ### 2.3. Uus kaubandusteooria (Krugman)
-* **Tarbijad:** Armastavad mitmekesisust (variety). Ei taheta lihtsalt autot, vaid kas Audit, Peugeot'd või Fiatit.
-* **Tootjad:** Mastaabisääst (suured püsikulud $FC$, madal piirkulu $MC$).
-* **Tulemus:** Igal riigil pole mõtet kõiki sorte ise toota (püsikulud dubleeruksid). Tekib **sisesharuline kaubandus (intra-industry trade)**: riigid vahetavad omavahel sarnaseid tooteid (nt Saksamaa müüb Prantsusmaale BMW-sid ja ostab vastu Renault'sid).
-
-### 2.4. "Uus uus" kaubandusteooria (Melitz / Heterogeensed firmad)
-* Ettevõtted ei ole ühesugused: osad on kõrge, teised madala tootlikkusega.
-* Kaubanduse avanemisel toimub **loov hävitamine:** madala tootlikkusega firmad lähevad pankrotti, kõrge tootlikkusega firmad laienevad ja hakkavad eksportima $\rightarrow$ kogu majanduse keskmine tootlikkus tõuseb.
-* **Globaalsed väärtusahelad (GVC):** Ligikaudu 70% maailmakaubandusest on vahesisendid ja teenused.
-* **Dünaamiline suhteline eelis (Stiglitz):** Suhteline eelis pole kivisse raiutud. Läbimõeldud tööstuspoliitikaga saab arendada tulevikus tulusaid harusid.
+* **Tarbijad:** Armastavad mitmekesisust (*love of variety* — tahetakse nii VW-d, Peugeot'd kui ka Fiatit).
+* **Tootjad:** Kasvav mastaabisääst (suured püsikulud `FC` + püsiv piirkulu `MC`) → monopolistlik konkurents (`p > MC`).
+* **Tulemus:** Pole mõtet igas riigis kõiki automudeleid ise toota (muidu makstakse püsikulu `FC` topelt). Tekib **sisesharuline kaubandus (intra-industry trade)**: riigid vahetavad sarnaseid tooteid (Saksamaa müüb Prantsusmaale BMW-sid ja ostab vastu Renault'sid).
 
 ---
 
-## 3. Intertemporaalne kaubandus ja jooksevkonto (O&R ch. 1)
+### 2.4. "Uus uus" kaubandusteooria (Melitz), GVC ja Stiglitz
+* **Ettevõtete heterogeensus (Melitz):** Firmad on erineva tootlikkusega. Kaubanduse avanemisel toimub **loov hävitamine**:
+  * Madala tootlikkusega firmad lähevad pankrotti ja lahkuvad turult.
+  * Kõrge tootlikkusega firmad laienevad ja hakkavad eksportima → **kogu majanduse keskmine tootlikkus tõuseb!**
+* **Globaalsed väärtusahelad (GVC):** ~70% maailmakaubandusest on vahesisendid ja teenused (mitte lõpptooted).
+* **Dünaamiline suhteline eelis (Stiglitz):** Suhtelist eelist saab pikaajaliselt kujundada **tööstuspoliitikaga**, suunates majandust suure kasvupotentsiaaliga harudesse.
 
-### 3.1. Põhimõisted ja jooksevkonto valemid
-* **Jooksevkonto (Current Account, $CA$):**
-  1. *Definitsioon I:* Välisvarade netopositsiooni muutus ajas:
-     $$CA_t = B_{t+1} - B_t$$
-  2. *Definitsioon II:* Rahvuslik säästmine miinus investeeringud:
-     $$CA_t = S_t - I_t = (Y_t + r B_t - C_t - G_t) - I_t$$
-  * Kui $CA > 0$ (ülejääk): riik säästab rohkem kui kodumaal investeerib $\rightarrow$ laenab välismaale ($NFA \uparrow$).
-  * Kui $CA < 0$ (puudujääk): riik investeerib/tarbib rohkem kui toodab $\rightarrow$ laenab välismaalt sisse ($NFA \downarrow$).
-  * **SKP vs RKP:** $GNP = GDP + r B_t$ (RKP = SKP + netotulud välisvaradelt).
+---
 
-### 3.2. Kaheperioodiline tarbija mudel (1.1)
-* Tulevikku diskonteeritakse subjektiivse teguriga $\beta = \frac{1}{1+\delta} < 1$.
-* **Eelarvepiirang 1. perioodi väärtuses:**
-  $$C_1 + \frac{C_2}{1+r} = Y_1 + \frac{Y_2}{1+r}$$
-* **Euleri võrrand (tarbija esimese astme tingimus):**
-  $$u'(C_1) = \beta (1+r) u'(C_2)$$
-  * **Intuitsioon:** Kui jätad 1 ühiku täna tarbimata, kaotad $u'(C_1)$. Homme saad selle eest $(1+r)$ ühikut, mille kasulikkus tänasesse taandatuna on $\beta (1+r) u'(C_2)$. Tasakaalus peavad need olema võrdsed!
-  * Kui $\beta(1+r) = 1$, siis $C_1 = C_2$ ehk **täielik tarbimise silumine (consumption smoothing)**.
+## 3. ⏳ Intertemporaalne kaubandus ja jooksevkonto (O&R 1. ptk)
 
-### 3.3. Autarkia intressimäär ($r^A$) ja kaubanduse kasu
-* **Autarkias (suletud majandus):** välismaalt laenata ei saa, seega $C_1 = Y_1$ ja $C_2 = Y_2$.
-  Autarkia intressimäär leitakse Euleri võrrandist:
-  $$1 + r^A = \frac{u'(Y_1)}{\beta u'(Y_2)}$$
-* **Avatud majanduses:**
-  * Kui **$r < r^A$**: maailmaturu intress on madal (laenamine odav) $\rightarrow C_1 > Y_1 \rightarrow CA_1 < 0$ (jooksevkonto puudujääk). Riik tarbib varem.
-  * Kui **$r > r^A$**: maailmaturu intress on kõrge $\rightarrow$ riik säästab ja laenab välja $\rightarrow CA_1 > 0$ (ülejääk).
-* **Kuldreegel heaolust:** Intertemporaalne kaubandus annab **alati mitte-negatiivse heaolu kasvu** võrreldes autarkiaga (sest riik võib alati jääda autarkiapunkti, aga valib parema).
+### 3.1. Jooksevkonto (`CA`) definitsioonid ja SKP vs RKP
+* **SKP (GDP) vs RKP (GNP):**
+  ```text
+  GNP = GDP + r · B_t
+  ```
+  *(RKP = kodumaine toodang + netotulud välisvaradelt).*
+* **Jooksevkonto (Current Account, `CA`) kaks samaväärset valemit:**
+  1. **Netovälisvarade (`B`) muutus:**
+     ```text
+     CA_t = B_{t+1} - B_t
+     ```
+  2. **Rahvuslik säästmine miinus investeeringud:**
+     ```text
+     CA_t = S_t - I_t = (Y_t + r·B_t - C_t - G_t) - I_t
+     ```
+  * Kui **`CA > 0` (ülejääk):** riik säästab rohkem kui investeerib → laenab raha välismaale (`NFA ↑`).
+  * Kui **`CA < 0` (puudujääk):** riik tarbib/investeerib rohkem kui toodab → laenab välismaalt sisse (`NFA ↓`).
 
-### 3.4. Investeeringute lisamine (1.2) ja Eraldumise printsiip
-* Tootmine: $Y_t = F(K_t)$, kus $F'(K) > 0$ ja $F''(K) < 0$ (kahanev piirtootlikkus).
-* **Eraldumise printsiip (Separation):**
+---
+
+### 3.2. Kaheperioodiline mudel ja Euleri võrrand (1.1)
+* **Eluea eelarvepiirang (kui algvarad `B₁ = 0` ja lõppvarad `B₃ = 0`):**
+  ```text
+  C₁ + C₂ / (1 + r) = Y₁ + Y₂ / (1 + r)
+  ```
+* **Euleri võrrand (optimaalse tarbimise tingimus üle aja):**
+  ```text
+  u'(C₁) = β(1 + r) · u'(C₂)      ehk      u'(C₁) / [β · u'(C₂)] = 1 + r
+  ```
+  * **Intuitsioon:** Kui loobud täna 1 ühikust tarbimisest, kaotad kasulikkust `u'(C₁)`. Säästetud ühik kasvab homseks `(1+r)` ühikuks, mis annab tänases väärtuses juurde `β(1+r)u'(C₂)`. Optimumis peavad need olema võrdsed!
+  * **Täielik tarbimise silumine:** Kui `β(1 + r) = 1`, siis `u'(C₁) = u'(C₂)`, mis tähendab **`C₁ = C₂ = konstantne`**.
+
+---
+
+### 3.3. Autarkia intressimäär (`rᴬ`) ja kaubanduse heaolu (1.1.4)
+* **Autarkias (suletud majandus):** laenata ei saa (`C₁ = Y₁` ja `C₂ = Y₂`). Autarkia intressimäär:
+  ```text
+  1 + rᴬ = u'(Y₁) / [β · u'(Y₂)]
+  ```
+* **Mis juhtub piiride avamisel?**
+  * Kui **`r < rᴬ`** (maailmaturul on laenamine odav): riik laenab ja tarbib 1. perioodil rohkem (`C₁ > Y₁` ⇒ **`CA₁ < 0`**).
+  * Kui **`r > rᴬ`** (maailmaturul on kõrge intress): riik säästab ja laenab välja (`C₁ < Y₁` ⇒ **`CA₁ > 0`**).
+  * **Heaolu kasv:** Intertemporaalne kaubandus suurendab alati heaolu võrreldes autarkiaga (ka siis, kui riigil on jooksevkonto puudujääk!).
+
+---
+
+### 3.4. Investeeringute lisamine ja Eraldumise printsiip (1.2)
+* Tootmisfunktsioon: `Y = F(K)`, kus piirtootlikkus `F'(K) > 0` on kahanev (`F''(K) < 0`).
+* **Eraldumise printsiip (Separation theorem):**
   * Väikeses avatud majanduses on **investeerimisotsus ja tarbimisotsus teineteisest täielikult lahus!**
-  * **Firma investeerib** seni, kuni kapitali piirtootlikkus võrdub maailmaturu intressiga:
-    $$F'(K_2) = r$$
-  * **Tarbija otsustab tarbimise** eraldi oma eluea kogurikkuse ja Euleri võrrandi järgi. Puudujäägi katab või ülejäägi paigutab rahvusvaheline finantsturg ($CA = S - I$).
+  * **1) Kui palju investeerida?** Ettevõtted investeerivad seni, kuni kapitali piirtootlikkus võrdub maailma intressimääraga:
+    ```text
+    F'(K₂) = r
+    ```
+  * **2) Kui palju tarbida?** Tarbijad valivad `C₁` ja `C₂` Euleri võrrandi järgi. Vahe `S - I` kaetakse rahvusvahelise laenamisega.
 
-### 3.5. Kuidas intressimäär mõjutab säästmist? (1.3.2)
-Kui intressimäär $r$ tõuseb, mõjutab see säästmist kolme kanali kaudu:
-1. **Asendusefekt ($+$):** Tulevikutarbimine muutub suhteliselt odavamaks $\rightarrow$ tarbi täna vähem, säästa rohkem ($S_1 \uparrow$).
-2. **Sissetulekuefekt ($-$ laenuandjale):** Kõrgem intress teeb netosäästja rikkamaks $\rightarrow$ tahab tarbida rohkem juba täna ($S_1 \downarrow$).
-3. **Rikkusefekt ($+$ säästmisele):** Tulevase sissetuleku nüüdisväärtus $\frac{Y_2}{1+r}$ väheneb $\rightarrow$ inimene tunneb end vaesemana $\rightarrow C_1 \downarrow \rightarrow S_1 \uparrow$.
-* **Kokkuvõte:** Tavaliselt eeldatakse, et asendusefekt domineerib ja säästmine kasvab intressi tõustes ($S'(r) > 0$).
+---
 
-### 3.6. Metzleri diagramm ja šokid (1.3.3)
-Metzleri diagramm määrab kahe suure riigi (Kodu ja Välismaa) vahel tasakaalulise maailma intressimäära:
-$$\text{Kodu säästu ülejääk } (S - I) = \text{Välismaa säästu puudujääk } (I^* - S^*)$$
+### 3.5. Intressimäära tõusu (`r ↑`) 3 efekti ja Metzleri diagramm (1.3.2–1.3.3)
 
-| Šokk Kodu riigis | Mis juhtub säästude ja investeeringutega? | Mõju jooksevkontole ($CA_1$) |
+#### A. Kuidas intressimäära tõus (`r ↑`) mõjutab säästmist (`S₁`)?
+1. **Asendusefekt (`+`):** Tänane tarbimine muutub homse suhtes kallimaks → `C₁ ↓` ja säästmine `S₁ ↑`.
+2. **Sissetulekuefekt (`-` netolaenuandjale):** Kui riik on laenuandja (`S₁ > 0`), teeb kõrgem intress ta rikkamaks → `C₁ ↑` ja `S₁ ↓`.
+3. **Rikkusefekt (`+`):** Tulevase toodangu `Y₂ / (1 + r)` nüüdisväärtus väheneb → `C₁ ↓` ja `S₁ ↑`.
+* *Isoelastse (CEIS) kasulikkuse korral:* kui asenduselastsus **`σ > 1`**, domineerib asendusefekt.
+
+#### B. Metzleri diagramm (Kahe suure riigi tasakaal: `S - I = I* - S*`)
+Suures maailmamudelis määrab maailma intressimäära `r` see, et ühe riigi jooksevkonto ülejääk võrdub teise riigi puudujäägiga.
+
+| Šokk Kodu riigis | Mis toimub majanduses? | Mõju jooksevkontole (`CA₁`) ja intressile (`r`) |
 | :--- | :--- | :--- |
-| **Ajutine tootlikkuse tõus 1. perioodil ($A_1 \uparrow$)** | Tulu on ajutiselt suur $\rightarrow$ tarbimise silumiseks säästetakse suurem osa tulust ($S_1 \uparrow$). | **$CA_1$ paraneb (suurem ülejääk)**, intressimäär maailmas $r \downarrow$. |
-| **Püsiv või tuleviku tootlikkuse tõus 2. perioodil ($A_2 \uparrow$)** | Oodatakse rikkust tulevikus $\rightarrow$ säästetakse vähem ($S_1 \downarrow$) ja investeeritakse rohkem ($I_1 \uparrow$). | **$CA_1$ halveneb (sügav puudujääk)**, riik laenab sisse. (Nt USA 1990ndate IT-buumi jooksevkonto defitsiit). |
+| **1. perioodi tootlikkuse tõus (`A₁ ↑`)** *(Ajutine hea aeg)* | Inimesed soovivad tarbimist siluda ja säästavad suure osa tänasest lisatulust (`S₁ ↑`). | **`CA₁` paraneb (ülejääk ↑)**, maailma intress `r ↓`. |
+| **2. perioodi tootlikkuse tõus (`A₂ ↑`)** *(Oodatav buum tulevikus)* | Oodatakse tulevast rikkust → täna säästetakse vähem (`S₁ ↓`) ja investeeritakse rohkem (`I₁ ↑`). | **`CA₁` halveneb (puudujääk ↓)**, maailma intress `r ↑`. *(Nt USA 90ndate IT-buum või Eesti enne EL-iga liitumist).* |
 
 ---
 
-## 4. Balassa-Samuelsoni efekt (O&R ch. 4: 4.1–4.2.3)
+## 4. 💇 Balassa-Samuelsoni efekt (O&R 4. ptk: 4.1–4.2.3)
 
-* **Probleem:** Miks ei kehti absoluutne ostujõu pariteet (PPP)? Miks on teenused ja üldine hinnatase vaestes/arenevates riikides palju madalamad kui rikastes riikides?
-* **Mudeli eeldused:**
-  1. Kaks sektorit: **Kaubeldavad kaubad ($T$)** (nt autod, elektroonika) ja **mittekaubeldavad kaubad ($N$)** (nt juuksur, ehitus, restoranid).
-  2. Kaubeldavatele kaupadele kehtib maailmaturu hind (ühe hinna seadus).
-  3. Tööjõud liigub riigisiseselt sektorite vahel vabalt $\rightarrow$ **mõlemas sektoris peab palk $W$ olema võrdne**.
-* **Mehhanism:**
-  1. Arenevas riigis kasvab tehnoloogia ja tootlikkus kiiresti **kaubeldavas sektoris ($A_T \uparrow$)**.
-  2. See tõstab tootlikkust ja tõstab palku $W$ kaubeldavas sektoris.
-  3. Kuna töölised võivad minna $T$-sektorisse, peab ka mittekaubeldav sektor ($N$) maksma sama kõrget palka $W$.
-  4. Aga $N$-sektori (nt juuksuri) tootlikkus $A_N$ **ei ole** märkimisväärselt kasvanud!
-  5. Et maksta kõrgemat palka ilma tootlikkuse kasvuta, **tõuseb mittekaubeldavate kaupade hind $P_N$**.
+* **Küsimus:** Miks on teenused ja üldine hinnatase vaesemates riikides odavamad kui rikastes ning miks kiiresti kasvavates riikides (nt Eestis) hinnatase pidevalt tõuseb?
+* **Mudeli loogika (4 sammu):**
+  1. Majanduses on **kaubeldav sektor (`T`)** (tööstus, kus hind tuleb maailmaturult) ja **mittekaubeldav sektor (`N`)** (juuksur, restoranid, ehitus).
+  2. Arenevas riigis kasvab tootlikkus kiiresti kaubeldavas sektoris (**`A_T ↑`**) → seal tõusevad palgad (**`W ↑`**).
+  3. Kuna töötajad saavad riigisiseselt vabalt töökohta vahetada, peab ka teenindussektor (`N`) maksma sama kõrget palka (**`W ↑`**).
+  4. Aga juuksuri tootlikkus (**`A_N`**) ei ole kasvanud! Kõrgema palga maksmiseks peab juuksur tõstma teenuse hinda (**`P_N ↑`**).
 * **Tulemus:**
-  * Kogu riigi tarbijahinnaindeks tõuseb $\rightarrow$ toimub **reaalapretsiatsioon** (riik muutub teiste suhtes kallimaks).
-  * See seletab, miks Eesti hinnatase on pärast taasiseseisvumist pidevalt Lääne-Euroopale järele jõudnud (konvergents).
+  ```text
+  A_T ↑   ⇒   W ↑ (kogu majanduses)   ⇒   P_N ↑   ⇒   Üldine hinnatase P ↑ (Reaalne kallinemine)
+  ```
 
 ---
 
-## 5. Määramatus ja riskijagamine (O&R ch. 5)
+## 5. 🛡️ Määramatus ja riskijagamine (O&R 5. ptk)
 
-### 5.1. Arrow-Debreu (AD) väärtpaberid ja täielikud turud (5.1)
-* **Olukord:** 2. perioodi tulu on ebakindel ja sõltub looduse seisundist $s$ (nt $s=1$ hea saak, $s=2$ ikaldus).
-* **Arrow-Debreu väärtpaber:** Maksab välja 1 ühiku toodangut **ainult siis**, kui realiseerub seisund $s$ (muul juhul maksab 0).
-* **Täielikud turud (Complete markets):** Väärtpabereid saab osta ja müüa iga võimaliku tulevikuseisundi vastu.
-* **Riskivaba võlakiri:** Võrdub portfelliga, kus ostetakse kõigi seisundite AD-väärtpabereid:
-  $$1 + r = \frac{1}{\sum_s p(s)}$$
-* **Aktuaarselt õiglane hind (Actuarially fair pricing):** AD-väärtpaberi suhteline hind võrdub selle seisundi tõenäosusega:
-  $$\frac{p(s)}{p(s')} = \frac{\pi(s)}{\pi(s')}$$
-* **Täielik kindlustus (Full Insurance):**
-  * Kui hinnad on aktuaarselt õiglased, valib riskikartlik tarbija **täieliku kindlustuse**:
-    $$C_2(1) = C_2(2) = \dots = C_2(S)$$
-  * Tarbimine on kõigis seisundites täpselt ühesugune (riski ei ole, täielik stabiilsus).
-
-### 5.2. Globaalne mudel ja tarbimise lahtisidumine (5.2.1)
-* Kui riigid kauplevad rahvusvahelistel finantsturgudel riskidega:
-  1. **Riigispetsiifilised (idiosünkraatilised) riskid hajutatakse täielikult ära!**
-  2. Riigid jagavad omavahel ainult **globaalset koguriski**.
-* **Põhitulemus (Tarbimise lahtisidumine):**
-  $$C_{it} = k_i \cdot Y_t^{world}$$
-  * Iga riigi tarbimine on fikseeritud osakaal $k_i$ **maailma kogutoodangust**.
-  * Riigi tarbimine **ei sõltu** enam tema enda SKP kõikumisest!
-  * **Teooria empiiriline ennustus:** Finantsintegratsiooni korral peab tarbimine riikide vahel korreleeruma tugevamini kui tootmine ($Corr(C, C^*) > Corr(Y, Y^*)$).
-* **Home Bias Puzzle (pp. 304–306):**
-  * Tegelikkuses investeerivad inimesed ja fondid valdavalt kodumaistesse aktsiatesse ja võlakirjadesse, mitte ei hajuta riske üle maailma.
-  * *Põhjused:* Infopuudus, tehingukulud, valuutarisk, juriidilised takistused.
+### 5.1. Arrow-Debreu (AD) väärtpaberid ja Täielik kindlustus (5.1)
+* **Olukord:** 2. perioodi sissetulek `Y₂(s)` on ebakindel ja sõltub looduse seisundist `s` (nt `s = 1` hea saak tõenäosusega `π(1)`, `s = 2` ikaldus tõenäosusega `π(2)`).
+* **Arrow-Debreu väärtpaber:** Maksab 1 ühiku kaupa perioodil 2 **ainult siis**, kui realiseerub seisund `s` (muidu maksab 0). Väärtpaberi hind täna on `p(s)`.
+* **Arbitraažitingimus riskivaba võlakirjaga:**
+  Kui osta 1 AD-väärtpaber iga võimaliku seisundi jaoks, saame kindla 1 ühiku (nagu tavaline võlakiri):
+  ```text
+  p(1) + p(2) = 1 / (1 + r)
+  ```
+* **Aktuaarselt õiglane hind (Actuarially fair pricing):**
+  ```text
+  p(1) / p(2) = π(1) / π(2)
+  ```
+* **Täielik kindlustus (Full insurance):**
+  * Kui AD-väärtpaberite hinnad on aktuaarselt õiglased, valib riskikartlik inimene **täieliku kindlustuse**:
+    ```text
+    C₂(1) = C₂(2)
+    ```
+  * Tarbimine on igas tulevikuseisundis täpselt sama — kogu risk on maandatud!
 
 ---
 
-## 6. Hinnatasemed ja intressipariteedid (Levi ch. 7 & 8)
+### 5.2. Globaalne mudel, tarbimise lahtisidumine ja Home Bias (5.2.1 & 5.3)
+* **Riigispetsiifiline vs globaalne risk:**
+  * Rahvusvahelistel finantsturgudel kaubeldakse riigispetsiifilised (idiosünkraatilised) riskid täielikult minema.
+  * Alles jääb ainult **maailma kogurisk** (`Y_2^w(s)`), mida riigid jagavad proportsionaalselt.
+* **Tarbimise lahtisidumine (Decoupling):**
+  ```text
+  C₂(s) = μ · Y₂^w(s)
+  ```
+  * Riigi tarbimine on fikseeritud osakaal `μ` maailma kogutoodangust ega sõltu enam riigi enda SKP šokkidest!
+  * **Teooria ennustus:** Finantsintegratsiooni korral peab riikide tarbimise korrelatsioon olema palju kõrgem kui SKP-de korrelatsioon.
+* **Empiiriline paradoks ja Home Equity Bias Puzzle (lk 304–306):**
+  * Tegelikkuses ei ole riikide tarbimine nii tugevalt korreleeritud ja investorid hoiavad lõviosa rahast kodumaistes aktsiates (*Home Bias*).
+  * *Põhjused:* Tehingukulud, infoprobleemid, juriidilised barjäärid, valuutarisk.
 
-### 6.1. Ostujõu pariteet (PPP - Levi ch. 7)
-1. **Ühe hinna seadus (Law of One Price - LOOP):**
-   $$P_i = S \cdot P_i^*$$
-   Üks ja sama kaubeldav toode (nt kuld, nafta) peab ilma transpordikuludeta maksma eri riikides sama palju, kui hinnad on teisendatud samasse valuutasse ($S$ on vahetuskurss, nt $\$ / £$).
+---
+
+## 6. 💱 Hinnatasemed ja intressipariteedid (Levi 7. ja 8. ptk)
+
+### 6.1. Ostujõu pariteet (PPP — Levi 7. ptk)
+1. **Ühe hinna seadus (Law of One Price – LOOP):**
+   ```text
+   P_i($) = S($/£) · P_i(£)
+   ```
+   Üksik kaubeldav toode maksab samas valuutas igal pool sama palju (kui pole transpordikulusid ega tolle).
 2. **Absoluutne PPP:**
-   $$P = S \cdot P^*$$
-   Terve tarbijakorvi üldine hinnatase on võrdne. *Tegelikkuses ei kehti* (transpordikulud, tollid, erinevad tarbimiskorvid, mittekaubeldavad teenused, Balassa-Samuelson).
+   ```text
+   P($) = S($/£) · P(£)
+   ```
+   Üldised hinnatasemed (tarbijakorvid) on võrdsed. *Praktikas ei kehti* (erinevad tarbimiskorvid, transpordikulud, maksud, mittekaubeldavad teenused / Balassa-Samuelson).
 3. **Suhteline PPP (Relative PPP):**
-   $$\frac{\Delta S}{S} \approx \pi - \pi^*$$
-   Vahetuskursi suhteline muutus võrdub riikide inflatsioonimäärade vahega. Kui USA-s on inflatsioon 5% ja Suurbritannias 2%, peab dollar odavnema 3%. Kehtib üsna hästi pikas perspektiivis ja hüperinflatsiooni korral.
-4. **Efektiivsete turgude / Spekulatiivne PPP:**
-   $$\frac{\Delta S^e}{S} \approx \pi^e - \pi^{*e}$$
-   Kehtib ootuste tasemel enne tehingute toimumist (ex-ante).
+   ```text
+   ΔS / S ≈ π_US - π_UK
+   ```
+   Valuuta odavnemise määr võrdub riikide inflatsioonimäärade vahega. Võib kehtida ka siis, kui absoluutne PPP ei kehti (kui hinnatasemete suhe püsib ajas konstantne).
+4. **Efektiivsete turgude (ootustel põhinev) PPP:**
+   ```text
+   ΔSᵉ / S ≈ π_USᵉ - π_UKᵉ
+   ```
+   Põhineb ootustel (*ex-ante*).
 
 ---
 
-### 6.2. Intressipariteedid (CIP ja UIP - Levi ch. 8)
-
-```
-                       INTRESSIPARITEEDID
-                               |
-        -----------------------------------------------
-        |                                             |
-   KAETUD (CIP)                                  KATMATA (UIP)
-- Riske maandatud forvardlepinguga            - Forvardlepingut EI ole
-- Puudub valuutarisk                          - Lähtub oodatavast kursist (S^e)
-- Valem: r - r* ≈ (F - S)/S                   - Valem: r - r* ≈ (S^e - S)/S
-- Kehtib praktikas peaaegu 100%               - Eeldab riskineutraalsust
-```
+### 6.2. Intressipariteedid (CIP ja UIP — Levi 8. ptk)
 
 #### A. Kaetud intressipariteet (Covered Interest Parity – CIP)
-* Investoril on 1 dollar. Kaks võimalust:
-  1. Investeerida dollarites intressiga $r_{\$}$.
-  2. Vahetada spot-kursiga $S$ naeladeks, investeerida naelades intressiga $r_{£}$ ja **müüa naelad kohe forvardkursiga $F$ tulevikuks tagasi dollariteks**.
-* **Täpne valem ja ligikaudne valem:**
-  $$1 + r_{\$} = \frac{F}{S}(1 + r_{£}) \quad \Longrightarrow \quad r_{\$} - r_{£} \approx \frac{F - S}{S} = f$$
-  kus $f = \frac{F-S}{S}$ on **forvardpreemia** (kui $f > 0$, on forvardkurss kallim kui spot ehk valuutal on preemia; kui $f < 0$, on soodustus ehk discount).
-* **Arbitraaž:** Kui võrdsus ei kehti, saavad pangad teha riskivaba kasumit (nt võtta laenu odavamas valuutas ja paigutada kallimasse, lukustades kursi forvardiga). Nõudlus ja pakkumine viivad turu kohe pariteeti tagasi.
-* **Miks CIP-st tekivad väikesed kõrvalekalded praktikas?**
-  1. Tehingukulud (bid-ask spread tekitab tegevusetuse tsooni ehk "neutral band").
-  2. Poliitiline risk (hirm, et välisriik külmutab varad või kehtestab kapitalikontrolli).
-  3. Erinev maksustamine (kapitalikasumi maksumäär vs intressitulu maksumäär).
-  4. Likviidsuse erinevused.
+Investor võrdleb dollaris hoiustamist ja naelas hoiustamist, **maandades valuutariski kohe forvardlepinguga (`F`)**:
+```text
+Täpne valem (1 a):       1 + r_$ = (F / S) · (1 + r_£)
+Ligikaudne valem:        r_$ - r_£ ≈ (F - S) / S = f
+```
+* `f = (F - S) / S` on **forvardpreemia** (kui `f > 0`, on välisvaluuta forvardis kallim; kui `f < 0`, on forvard-soodustus ehk *discount*).
+* **Arbitraaž:** Kui CIP ei kehti, tekib riskivaba kasumivõimalus (laena ühes valuutas, investeeri teises, lukusta kurss forvardiga), mis surub turu kohe tasakaalu tagasi.
+* **4 põhjust, miks CIP-st võivad tekkida väikesed kõrvalekalded:**
+  1. **Tehingukulud:** *bid-ask spread* tekitab pariteedi ümber "tegevusetuse tsooni" (*band of inactivity*).
+  2. **Poliitiline risk:** oht, et välisriik külmutab varad või kehtestab kapitalikontrolli.
+  3. **Erinevad maksud:** kui kapitalikasumit (`F - S`) maksustatakse madalama määraga kui intressitulu (`r`), eelistatakse forvardpreemiaga valuutat.
+  4. **Likviidsuserinevused:** välisvarade ennetähtaegne müük tekitab tähtaegade ebakõla.
 
-#### B. Katmata intressipariteet (Uncovered Interest Parity – UIP)
-* Forvardlepingut ei sõlmita. Investor riskib ja loodab tulevasele oodatavale spot-kursile $S^e$:
-  $$r_{\$} - r_{£} \approx \frac{S^e - S}{S}$$
-* Intresside vahe võrdub vahetuskursi oodatava odavnemisega.
-* **Tähtis eeldus:** Eeldab **riskineutraalseid investoreid**. Kui investorid on riskikartlikud, lisandub **riskipreemia** ($RP$).
-
-#### C. Fisher-Open seos
-Kui kombineerida suhteline PPP ($\frac{S^e - S}{S} \approx \pi^e - \pi^{*e}$) ja UIP ($r - r^* \approx \frac{S^e - S}{S}$):
-$$r - \pi^e \approx r^* - \pi^{*e}$$
-Oodatavad reaalintressimäärad eri riikides peavad olema võrdsed!
-
----
-
-## 7. Kolm empiirilist teadustööd
-
-### 7.1. Gräbner et al. (2021) – Majandusliku avatuse mõõdikud
-* **Uurimisküsimus:** Kuidas mõõta riigi majanduslikku avatust? Kas eri mõõdikud näitavad sama asja ja kas avatus toob majanduskasvu?
-* **Mõõdikute jaotus:**
-  * *De jure* (seadused, tariifid, reeglid) vs *De facto* (reaalsed kauba- ja finantsvood).
-  * *Reaalne avatus* (eksport + import) vs *Finantsavatus* (välisvarad, portfellid).
-  * *Hübriidindeksid* (nt KOF globaliseerumisindeks).
-  * *Bruto vs lisandväärtus:* Traditsiooniline kaubandus mõõdab brutomahtu. Kui riik impordib auto, värvib triibu peale ja ekspordib, on kaubandusmaht hiiglaslik, aga lisandväärtus ($VA$) minimaalne!
-* **Põhitulemused:**
-  1. Erinevad mõõdikud omavahel hästi kokku **ei lange** (eriti madal on korrelatsioon finants- ja kaubandusavatuse vahel ning muutuste $\Delta$ vahel).
-  2. **Seos majanduskasvuga on äärmiselt habras (fragile):** sõltub sellest, millist mõõdikut kasutada; regressioonides on tulemused sageli statistiliselt mitteolulised või ebaloogilise märgiga. Ekonomeetrias kummitavad pöördkusaalsus ja väljajäetud muutujad.
+#### B. Katmata intressipariteet (Uncovered Interest Parity – UIP) ja Fisher-Open
+* **UIP:** Investor ei sõlmi forvardlepingut, vaid lähtub **oodatavast spot-kursist `Sᵉ`**:
+  ```text
+  r_$ - r_£ ≈ (Sᵉ - S) / S
+  ```
+  *NB! Eeldab **riskineutraalsust** (kus `F = Sᵉ`). Kui investorid on riskikartlikud, lisandub riskipreemia!*
+* **Fisher-Open tingimus (UIP + ootustel põhinev PPP):**
+  ```text
+  r_$ - π_USᵉ ≈ r_£ - π_UKᵉ
+  ```
+  Oodatavad **reaalintressimäärad** on riikide vahel võrdsed!
 
 ---
 
-### 7.2. Bussière, Fratzscher & Müller (2006) – Jooksevkonto OECD-s ja uutes EL riikides
-* **Teooria taust:** O&R 1. peatüki intertemporaalne mudel (jooksevkonto roll tarbimise silumisel).
-* **Andmed:** Paneelandmed 33 riigi kohta (21 OECD + 10 Kesk- ja Ida-Euroopa uut EL riiki + BG, RO), aastad 1980–2002.
-* **Metoodika ja ökonomeetria:**
-  * Dünaamiline paneelmudel (mudelis on eelneva perioodi jooksevkonto $CA_{t-1}$).
-  * Kuna tavaline paneelhinnang (LSDV) tekitab hilistatud sõltuva muutuja tõttu **Nickelli nihke**, kasutatakse instrumentmuutujate meetodeid: **Anderson-Hsiao IV** ja **Arellano-Bond GMM**.
-* **Regressioonimudel:**
-  $$\frac{CA_{it}}{GDP_{it}} = \alpha \frac{CA_{i,t-1}}{GDP_{i,t-1}} + \beta_1 \text{fiscal\_surplus} + \beta_2 \Delta \text{net\_surplus} + \dots$$
-  * $\Delta \text{net\_surplus}$: kodumaine toodang miinus investeeringud ja valitsuskulud võrreldes valimi keskmisega. Kui ressursse on ajutiselt rohkem, siis säästetakse $\Rightarrow CA \uparrow$.
-* **Põhitulemused:**
-  1. **Intertemporaalne lähenemine peab paika:** $\Delta \text{net\_surplus}$ kordaja on positiivne ja oluline (ajutised tulutõusud parandavad jooksevkontot).
-  2. **Tugev inerts (Persistence):** Jooksevkonto muutub aeglaselt ($\alpha > 0$), mis viitab tarbimisharjumuste püsivusele (habit persistence).
-  3. **Eelarvepoliitika loeb:** Eelarve ülejääk parandab jooksevkontot (kaksikpuudujääk – Ricardian equivalence ei kehti täielikult).
+## 7. 📊 Kolm empiirilist teadustööd
+
+| Artikkel | Uurimisküsimus | Andmed ja Meetod | Peamised tulemused (Mida eksamil küsitakse!) |
+| :--- | :--- | :--- | :--- |
+| **1. Gräbner et al. (2021)**<br>*Understanding Economic Openness* | Kuidas mõõta majanduslikku avatust? Kas mõõdikud korreleeruvad ja kas avatus toob majanduskasvu? | Ülevaade *de jure* (tariifid, reeglid) vs *de facto* (kaubamaht, kapitalivood), reaal- vs finantsmõõdikutest ja KOF hübriidindeksist.<br>Kasvuregressioonid (5-a tasemed + 1. diferentsid FD). | 1. **Nõrk korrelatsioon:** kaubandus- ja finantsavatus ning muutused (`Δ`) korreleeruvad omavahel väga vähe.<br>2. **Bruto vs lisandväärtus:** auto import ja triibu peale värvimine näitab suurt brutokaubandust, kuid väikest lisandväärtust.<br>3. **Kasvuseos on habras:** tulemused sõltuvad täielikult valitud mõõdikust, palju ebaloogilisi märke ja ökonomeetrilisi probleeme (pöördkusaalsus). |
+| **2. Bussière et al. (2006)**<br>*Current Account Dynamics in OECD & New EU* | Kas O&R intertemporaalne jooksevkonto mudel kehtib OECD ja uutes EL riikides? | 33 riiki (21 OECD + 12 uut EL/kandidaatriiki), 1980–2002.<br>**Dünaamiline paneel** (`CA_{t-1}`). Kuna LSDV annab *Nickelli nihke*, kasutatakse **Anderson-Hsiao IV** ja **Arellano-Bond GMM** hinnanguid. | 1. **Kinnitab intertemporaalset mudelit:** `Δnet_surplus` (ajutine vaba tulu) tõstab jooksevkonto ülejääki (`CA ↑`).<br>2. **Tugev püsivus (persistence):** `CA_{t-1}` on oluline (tarbimisharjumused / *habit formation*).<br>3. **Eelarve loeb:** riigieelarve ülejääk parandab `CA`-d (*Ricardian equivalence* ei kehti). |
+| **3. Demyanyk et al. (2008)**<br>*Risk Sharing in EMU* | Kas EL ja euroala finantsintegratsioon (ja euro tulek) suurendas sissetuleku ja tarbimise riskijagamist? | Ristandmete ja paneelregressioonid (enne eurot 1995–1999 vs pärast eurot 2000–2006).<br>Võrreldakse sissetuleku silumist (`GDP` vs `GNI`) ja tarbimise silumist (`GDP` vs `C`). Täielik silumine: `β = 1` (100%). | 1. **Riskijagamine on madal:** nii EL-is kui ka euroalal on riskijagamine piiratud.<br>2. Tarbimist silutakse rohkem kui sissetulekut.<br>3. **PÕHILEID:** **Euro kasutuselevõtt EI suurendanud riskijagamist!** Põhjused on ebaselged. |
 
 ---
 
-### 7.3. Demyanyk, Ostergaard & Sørensen (2008) – Riskijagamine EMU-s
-* **Teooria taust:** O&R 5. peatükk (kui kapitaliturud on integreeritud, silutakse riikide sissetuleku ja tarbimise kõikumisi välisvarade abil).
-* **Mõõtmise metoodika:**
-  Võrreldakse riigi $i$ kasvu euroala keskmisega kahel tasandil:
-  1. *Sissetuleku silumine (Income smoothing):* $GDP$ vs $GNI$ (kas välisvarade dividendid ja intressid pehmendavad SKP šokke?):
-     $$\Delta \log(GDP_{it}) - \Delta \log(GNI_{it}) = v_t + \beta_t (\Delta \log(GDP_{it}) - \Delta \log(GDP_t))$$
-     Täielik riskijagamine oleks $\beta = 1$ (100%).
-  2. *Tarbimise silumine (Consumption smoothing):* $C$ vs $GDP$.
-* **Põhitulemused:**
-  1. **Riskijagamine on piiratud:** Euroala ja EL-i riikide vahel on riskijagamine tagasihoidlik.
-  2. Tarbimist silutakse rohkem kui sissetulekut (aga seda tehakse peamiselt tavalise säästmise/laenamise, mitte rahvusvahelise kapitalitulu kaudu).
-  3. **KÕIGE TÄHTSAM LEID:** **Euro kasutuselevõtt EI suurendanud riskijagamist!** (Periood 2000–2006 ei näita paremat riskijagamist kui 1995–1999). Põhjused on ebaselged, sest välismaiste väärtpaberite omamine küll kasvas, aga see ei toonud kaasa oodatud riskikaitset.
-
----
-
-## 8. Harjutusülesannete tüüpülesanded ja nipid
+## 8. 🧮 Harjutusülesannete tüüpülesanded ja nipid
 
 ### 8.1. MRT ja suhtelise eelise arvutamine (Harjutused 1 & 2)
-* **Valem:**
-  $$MRT_1 = \left|\frac{\Delta \text{Good 2}}{\Delta \text{Good 1}}\right|$$
-* **Ülesande nipp:** Kui riik A loobub 1 ühiku riide tegemiseks 0.5 veinist ($MRT_A = 0.5$) ja riik B loobub 1 riide tegemiseks 2 veinist ($MRT_B = 2$):
-  * Riigil A on madalam alternatiivkulu riides $\rightarrow$ toodab ja ekspordib riiet.
-  * Riik B toodab ja ekspordib veini.
-  * Maailmaturu vahetussuhe kujuneb vahemikus $0.5 < P_{\text{riie}}/P_{\text{vein}} < 2$.
-
-### 8.2. Kaheperioodilise mudeli ja jooksevkonto arvutus (Harjutused 3 & 4)
-* **Klassikaline ülesanne:** Antud $Y_1$, $Y_2$, $r$, diskontomäär $\beta$, kasulikkusfunktsioon $u(C) = \ln C$.
-* **Sammud:**
-  1. Euleri võrrand log-kasulikkusega:
-     $$\frac{1}{C_1} = \beta(1+r)\frac{1}{C_2} \quad \Longrightarrow \quad C_2 = \beta(1+r)C_1$$
-  2. Asenda eelarvepiirangusse $C_1 + \frac{C_2}{1+r} = Y_1 + \frac{Y_2}{1+r}$:
-     $$C_1 + \beta C_1 = \text{Rikkus}_1 \quad \Longrightarrow \quad C_1 = \frac{1}{1+\beta} \left(Y_1 + \frac{Y_2}{1+r}\right)$$
-  3. Leia jooksevkonto:
-     $$CA_1 = Y_1 - C_1$$
-     * Kui $Y_1 > C_1 \rightarrow CA_1 > 0$ (ülejääk).
-     * Kui $Y_1 < C_1 \rightarrow CA_1 < 0$ (puudujääk).
-  4. Autarkia intressimäär $r^A$: Pane $C_1 = Y_1$ ja $C_2 = Y_2$ Euleri võrrandisse:
-     $$1 + r^A = \frac{Y_2}{\beta Y_1}$$
-
-### 8.3. Kaetud intressipariteedi (CIP) arvutus (Harjutused 5 & 6)
-* **Valem:** $r_{\$} - r_{£} \approx \frac{F - S}{S}$.
+* **Valem:** `MRT = |ΔGood 2 / ΔGood 1|`
 * **Näide:**
-  * $r_{\$} = 5\% = 0.05$
-  * $r_{£} = 7\% = 0.07$
-  * Spot kurss $S = 1.50$ $\$ / £$, 1 aasta forvardkurss $F = 1.47$ $\$ / £$.
-  * Forvardpreemia: $\frac{F - S}{S} = \frac{1.47 - 1.50}{1.50} = -0.02 = -2\%$.
-  * Kontroll: $r_{\$} - r_{£} = 5\% - 7\% = -2\%$.
-  * Tulemus: $-2\% = -2\% \rightarrow$ **CIP kehtib**, arbitraaživõimalust pole.
+  * Inglismaa: `MRT_EN = 0.5` (1 riide tootmiseks loobutakse 0.5 veinist).
+  * Portugal: `MRT_PT = 2.0` (1 riide tootmiseks loobutakse 2 veinist).
+* **Järeldus:**
+  * Inglismaal on riide tootmise alternatiivkulu madalam (`0.5 < 2.0`) → **Inglismaa toodab ja ekspordib riiet**.
+  * **Portugal toodab ja ekspordib veini**.
+  * Vabakaubanduse maailmaturu hind kujuneb vahemikus `0.5 ≤ P_riie / P_vein ≤ 2.0`.
 
 ---
 
-> [!TIP]
-> **Eksamil vastamise strateegia:**
-> 1. Alusta alati **majanduslikust intuitsioonist** (miks tarbija või riik nii käitub).
-> 2. Too välja **põhiseos või graafik** (nt Metzleri diagramm šoki korral, Euleri võrrand tarbimise silumisel).
-> 3. Empiiriliste tööde puhul nimeta kindlasti: **andmestik**, **põhiline ökonomeetriline probleem** (nt Nickelli nihe Bussière'is, de facto vs de jure Gräbneris) ja **põhiline lõppjäreldus** (nt euro ei suurendanud riskijagamist Demyanykis).
+### 8.2. O&R kaheperioodilise mudeli ja jooksevkonto arvutus (Harjutused 3 & 4)
+* **Ülesanne:** Antud `Y₁`, `Y₂`, `r`, diskontotegur `β` ja logaritmiline kasulikkus `U = ln(C₁) + β·ln(C₂)`.
+* **Lahenduskäik 4 sammuga:**
+  1. **Euleri võrrand:**
+     ```text
+     1 / C₁ = β(1 + r) · (1 / C₂)   ⇒   C₂ = β(1 + r) · C₁
+     ```
+  2. **Asenda eelarvepiirangusse `C₁ + C₂/(1+r) = Y₁ + Y₂/(1+r)`:**
+     ```text
+     C₁ = [1 / (1 + β)] · [Y₁ + Y₂ / (1 + r)]
+     ```
+  3. **Arvuta 1. perioodi jooksevkonto:**
+     ```text
+     CA₁ = Y₁ - C₁
+     ```
+  4. **Arvuta autarkia intressimäär `rᴬ` (kus `C₁ = Y₁` ja `C₂ = Y₂`):**
+     ```text
+     1 + rᴬ = Y₂ / (β · Y₁)
+     ```
+
+---
+
+### 8.3. Levi CIP intressipariteedi ja arbitraaži arvutus (Harjutused 5 & 6)
+* **Ülesanne:** 3-kuuline (`1/4` aastat) investeering. Aastane intress `r_$ = 5%`, `r_£ = 7%`. 3-kuu forvard-soodustus naelale on `-0.7%`. Kuhu investeerida?
+* **Lahenduskäik:**
+  1. 3-kuu tootlus dollaris: `5% / 4 = 1.25%`.
+  2. 3-kuu kaetud tootlus naelas: `(7% / 4) - 0.7% = 1.75% - 0.7% = 1.05%`.
+  3. Kuna `1.25% > 1.05%`, on **kasulikum investeerida dollarisse** (ja laenata naelas)!
+  4. CIP kehtiks täpselt siis, kui 3-kuu forvard-soodustus oleks `1.25% - 1.75% = -0.5%`.
