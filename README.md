@@ -7,7 +7,7 @@ See repositoorium sisaldab rahvusvahelise majandusteaduse õppematerjale, teadus
 1. 🌐 **[index.html](index.html) – Interaktiivne veebileht & õppekeskkond** *(Kõige mugavam!)*
    - Sisaldab **teemade vahekaarte**, **kiire otsingu kasti**, **16 mälukaarti (Flashcards)**, **enesekontrolli kiirtesti (Quiz)** ning **heledat/tumedat vaadet**.
    - **Avamine arvutis:** tee topeltklõps failil `index.html` (avaneb otse brauseris).
-   - **Avamine veebis (GitHub HTML Preview):** [Ava interaktiivne õppekeskkond otse brauseris](https://htmlpreview.github.io/?https://github.com/mssaar/International-Economics/blob/main/index.html)
+   - **Avamine veebis (GitHub Pages):** https://mssaar.github.io/International-Economics/
 2. 📄 **[VAHEEKSAMI_KOKKUVOTE.pdf](VAHEEKSAMI_KOKKUVOTE.pdf)** – Puhtalt vormindatud PDF-dokument (mugav telefonis, tahvlis või väljaprindituna lugemiseks).
 3. 📝 **[VAHEEKSAMI_KOKKUVOTE.docx](VAHEEKSAMI_KOKKUVOTE.docx)** – Microsoft Wordi fail (saad vajadusel ise märkmeid juurde kirjutada).
 4. 📖 **[VAHEEKSAMI_KOKKUVOTE.md](VAHEEKSAMI_KOKKUVOTE.md)** – Puhastatud Markdown-konspekt (ilma segava LaTeXi koodimürata, kasutab selgeid Unicode'i sümboleid ja tabeleid).
